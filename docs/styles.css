@@ -2,7 +2,6 @@
   --bg: #f4f7fb;
   --surface: #ffffff;
   --surface-soft: #edf3f9;
-  --surface-alt: #eaf0f7;
   --text: #172437;
   --muted: #61738a;
   --primary: #184f8f;
@@ -14,8 +13,7 @@
   --shadow: 0 18px 48px rgba(17, 35, 60, 0.08);
   --shadow-strong: 0 24px 72px rgba(13, 35, 67, 0.16);
   --radius: 22px;
-  --radius-sm: 16px;
-  --max-width: 1180px;
+  --max-width: 1240px;
 }
 
 * {
@@ -49,12 +47,12 @@ a:hover {
 }
 
 .container {
-  width: min(92%, var(--max-width));
+  width: min(94%, var(--max-width));
   margin: 0 auto;
 }
 
 .narrow {
-  width: min(92%, 860px);
+  width: min(92%, 900px);
   margin: 0 auto;
 }
 
@@ -159,7 +157,7 @@ a:hover {
 
 .hero-home {
   min-height: calc(100vh - 78px);
-  padding: 86px 0 74px;
+  padding: 92px 0 76px;
   display: flex;
   align-items: center;
 }
@@ -199,12 +197,65 @@ a:hover {
   pointer-events: none;
 }
 
+.hero-top-accent {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.canada-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(8px);
+}
+
+.flag-bar {
+  width: 10px;
+  height: 22px;
+  border-radius: 3px;
+  background: #d62c2c;
+}
+
+.flag-center {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.bridge-line {
+  position: absolute;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.bridge-line-1 {
+  width: 520px;
+  height: 180px;
+  right: 6%;
+  bottom: 16%;
+}
+
+.bridge-line-2 {
+  width: 680px;
+  height: 240px;
+  right: -4%;
+  bottom: 8%;
+  opacity: 0.7;
+}
+
 .hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 36px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 42px;
   align-items: center;
 }
 
@@ -221,7 +272,7 @@ a:hover {
 .page-hero h1 {
   margin: 0 0 18px;
   line-height: 1.08;
-  font-size: clamp(2.3rem, 4vw, 4.4rem);
+  font-size: clamp(2.3rem, 4vw, 4.25rem);
 }
 
 .hero-text,
@@ -298,23 +349,6 @@ a:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.hero-trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.trust-pill {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: rgba(255,255,255,0.9);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
 .hero-side {
   display: grid;
   gap: 18px;
@@ -322,7 +356,7 @@ a:hover {
 
 .hero-card {
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 30px;
   box-shadow: var(--shadow-strong);
 }
 
@@ -344,18 +378,22 @@ a:hover {
   letter-spacing: 0.08em;
   font-size: 0.8rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dark-panel-label {
+  color: rgba(255,255,255,0.9);
 }
 
 .hero-card h2 {
-  margin: 0 0 14px;
-  font-size: 1.9rem;
+  margin: 0 0 16px;
+  font-size: 1.95rem;
   line-height: 1.2;
 }
 
 .check-list {
   margin: 16px 0 0;
-  padding-left: 18px;
+  padding-left: 22px;
 }
 
 .check-list li {
@@ -373,7 +411,7 @@ a:hover {
 }
 
 .mini-card {
-  padding: 18px;
+  padding: 20px;
   border-radius: 18px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.12);
@@ -400,12 +438,12 @@ a:hover {
 }
 
 .section {
-  padding: 84px 0;
+  padding: 88px 0;
 }
 
 .section-tight {
-  padding-top: 68px;
-  padding-bottom: 68px;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 .alt-bg {
@@ -462,19 +500,14 @@ a:hover {
 .split-showcase {
   display: grid;
   grid-template-columns: 1fr 0.95fr;
-  gap: 28px;
+  gap: 32px;
   align-items: center;
-}
-
-.split-left,
-.split-right {
-  min-width: 0;
 }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 .feature-grid.three-up {
@@ -496,7 +529,7 @@ a:hover {
 .feature-card,
 .soft-card {
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 28px;
 }
 
 .elevated-card {
@@ -521,26 +554,13 @@ a:hover {
   color: var(--muted);
 }
 
-.icon-badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #dcecff, #eef6ff);
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 0.9rem;
-}
-
 .stacked-list {
   display: grid;
   gap: 18px;
 }
 
 .stacked-item {
-  padding: 20px 22px;
+  padding: 22px 24px;
   border-radius: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -557,7 +577,7 @@ a:hover {
 }
 
 .premium-gradient {
-  padding: 30px;
+  padding: 34px;
   border-radius: var(--radius);
   color: #fff;
   background:
@@ -569,11 +589,12 @@ a:hover {
 
 .showcase-list {
   margin: 18px 0 0;
-  padding-left: 18px;
+  padding-left: 22px;
 }
 
 .showcase-list li {
   margin-bottom: 12px;
+  color: #fff;
 }
 
 .steps-grid {
@@ -616,7 +637,7 @@ a:hover {
 
 .marketing-service-card {
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 30px;
   position: relative;
   overflow: hidden;
 }
@@ -654,7 +675,7 @@ a:hover {
 
 .marketing-list {
   margin: 0;
-  padding-left: 18px;
+  padding-left: 20px;
 }
 
 .marketing-list li {
@@ -679,7 +700,7 @@ a:hover {
 .contact-panel,
 .contact-card {
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 28px;
 }
 
 .large-card {
@@ -707,8 +728,18 @@ a:hover {
   color: var(--muted);
 }
 
+.contact-detail a,
+.site-footer a,
+.footer-links a {
+  color: rgba(255,255,255,0.9);
+}
+
+.contact-panel a {
+  color: var(--primary-3);
+}
+
 .contact-guide-list {
-  padding-left: 18px;
+  padding-left: 20px;
 }
 
 .contact-guide-list li {
@@ -773,10 +804,6 @@ a:hover {
   color: #fff;
 }
 
-.site-footer a {
-  color: rgba(255,255,255,0.9);
-}
-
 .footer-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 1fr;
@@ -806,7 +833,7 @@ a:hover {
   font-size: 0.94rem;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .hero-grid,
   .two-col-grid,
   .contact-layout,
@@ -863,6 +890,14 @@ a:hover {
   .hero-home,
   .page-hero {
     padding-top: 88px;
+  }
+
+  .hero-top-accent {
+    display: none;
+  }
+
+  .bridge-line {
+    display: none;
   }
 
   .section {
