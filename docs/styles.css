@@ -3,7 +3,7 @@
   --surface: #ffffff;
   --surface-soft: #edf2f8;
   --text: #16263d;
-  --muted: #4f6177;
+  --muted: #44586f;
   --primary: #184f8f;
   --primary-2: #2e74b7;
   --primary-3: #0f3560;
@@ -589,6 +589,8 @@ p {
   padding: 28px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .marketing-service-card::before {
@@ -618,12 +620,12 @@ p {
 }
 
 .service-summary {
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   color: var(--muted);
 }
 
 .marketing-list {
-  margin: 0;
+  margin: 4px 0 0;
   padding-left: 20px;
 }
 
@@ -633,8 +635,8 @@ p {
 }
 
 .service-fit {
-  margin-top: 16px;
-  padding-top: 14px;
+  margin-top: 22px;
+  padding-top: 16px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-weight: 500;
