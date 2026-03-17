@@ -29,8 +29,12 @@ body {
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.65;
+  line-height: 1.68;
   -webkit-text-size-adjust: 100%;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 img {
@@ -45,6 +49,13 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(46, 116, 183, 0.28);
+  outline-offset: 3px;
+  border-radius: 10px;
 }
 
 p {
@@ -242,7 +253,7 @@ p {
   font-weight: 700;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.84);
-  max-width: 640px;
+  max-width: 700px;
 }
 
 .hero h1,
@@ -255,8 +266,8 @@ p {
 .hero-text,
 .page-hero-text {
   margin: 0;
-  max-width: 700px;
-  font-size: 1.05rem;
+  max-width: 720px;
+  font-size: 1.06rem;
 }
 
 .hero-text {
@@ -366,7 +377,7 @@ p {
 
 .hero-card h2 {
   margin: 0 0 14px;
-  font-size: 1.85rem;
+  font-size: 1.8rem;
   line-height: 1.2;
 }
 
@@ -496,14 +507,17 @@ p {
 .contact-panel,
 .showcase-card,
 .marketing-service-card,
-.note-card {
+.note-card,
+.task-card {
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
 .feature-card,
-.soft-card {
+.soft-card,
+.step-card,
+.task-card {
   border-radius: var(--radius);
   padding: 26px;
 }
@@ -512,7 +526,9 @@ p {
 .marketing-service-card,
 .audience-card,
 .stacked-item,
-.note-card {
+.note-card,
+.step-card,
+.task-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -520,21 +536,31 @@ p {
 .marketing-service-card:hover,
 .audience-card:hover,
 .stacked-item:hover,
-.note-card:hover {
+.note-card:hover,
+.step-card:hover,
+.task-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-strong);
 }
 
 .feature-card h3,
-.soft-card h3 {
+.soft-card h3,
+.task-card h3 {
   margin-top: 0;
   margin-bottom: 10px;
 }
 
 .feature-card p,
-.soft-card p {
+.soft-card p,
+.task-card p {
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .stacked-list {
@@ -587,6 +613,10 @@ p {
   gap: 24px;
 }
 
+.service-cards-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .marketing-service-card {
   border-radius: var(--radius);
   padding: 28px;
@@ -618,7 +648,7 @@ p {
 
 .marketing-service-card h3 {
   margin: 0 0 12px;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   line-height: 1.22;
 }
 
@@ -643,6 +673,41 @@ p {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-weight: 500;
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.step-card {
+  position: relative;
+}
+
+.step-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 10px 24px rgba(24, 79, 143, 0.18);
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .note-grid {
@@ -743,6 +808,33 @@ p {
   color: var(--muted);
 }
 
+.contact-button-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.contact-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--primary-3);
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.contact-link-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+}
+
 .cta-band {
   color: #fff;
   background:
@@ -835,7 +927,10 @@ p {
 
   .feature-grid.three-up,
   .audience-grid.three-up,
-  .service-cards-grid {
+  .service-cards-grid,
+  .service-cards-grid-three,
+  .task-grid,
+  .step-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -884,6 +979,10 @@ p {
     padding-top: 82px;
   }
 
+  .hero-home {
+    min-height: auto;
+  }
+
   .bridge-line {
     display: none;
   }
@@ -895,7 +994,11 @@ p {
   .feature-grid.three-up,
   .audience-grid.three-up,
   .service-cards-grid,
-  .footer-grid {
+  .service-cards-grid-three,
+  .footer-grid,
+  .task-grid,
+  .step-grid,
+  .note-grid {
     grid-template-columns: 1fr;
   }
 
@@ -915,6 +1018,8 @@ p {
   .marketing-service-card,
   .feature-card,
   .soft-card,
+  .step-card,
+  .task-card,
   .contact-card,
   .contact-panel,
   .audience-card,
@@ -925,5 +1030,13 @@ p {
 
   .premium-gradient {
     padding: 24px;
+  }
+
+  .contact-button-list {
+    flex-direction: column;
+  }
+
+  .contact-link-btn {
+    width: 100%;
   }
 }

@@ -5,14 +5,16 @@ if (menuToggle && siteNav) {
   const closeMenu = () => {
     siteNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
   };
 
   const openMenu = () => {
     siteNav.classList.add("open");
     menuToggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("nav-open");
   };
 
-  menuToggle.addEventListener("click", (event) => {
+  const toggleMenu = (event) => {
     event.stopPropagation();
     const isOpen = siteNav.classList.contains("open");
 
@@ -21,7 +23,9 @@ if (menuToggle && siteNav) {
     } else {
       openMenu();
     }
-  });
+  };
+
+  menuToggle.addEventListener("click", toggleMenu);
 
   const navLinks = siteNav.querySelectorAll("a");
   navLinks.forEach((link) => {
@@ -38,6 +42,13 @@ if (menuToggle && siteNav) {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
       closeMenu();
     }
   });
