@@ -1,7 +1,9 @@
 {
   "name": "Ebin Johnson",
   "short_name": "Ebin Johnson",
+  "description": "Website, communications, and operations support for churches, nonprofits, and community organizations in Sarnia and surrounding communities.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
