@@ -19,7 +19,9 @@
   --section-space: clamp(4.25rem, 7vw, 6.75rem);
   --section-space-compact: clamp(3.25rem, 5vw, 5rem);
   --content-gap: clamp(1.25rem, 2.4vw, 2.25rem);
+  --hero-overlay: linear-gradient(90deg, rgba(6, 20, 39, 0.82) 0%, rgba(10, 33, 62, 0.72) 34%, rgba(16, 63, 112, 0.50) 58%, rgba(23, 95, 166, 0.24) 100%);
 }
+
 
 * {
   box-sizing: border-box;
@@ -237,10 +239,7 @@ p {
   position: relative;
   overflow: hidden;
   color: #fff;
-  background:
-    radial-gradient(circle at top right, rgba(115, 203, 255, 0.18), transparent 24%),
-    radial-gradient(circle at bottom left, rgba(115, 203, 255, 0.12), transparent 28%),
-    linear-gradient(135deg, #0d2b4b 0%, #124a82 48%, #2c76c2 100%);
+  background: linear-gradient(135deg, #10345b 0%, #165fa8 44%, #3a89d8 100%);
 }
 
 .hero-home {
@@ -253,6 +252,23 @@ p {
 .hero-home-image {
   min-height: auto;
   padding: clamp(4rem, 7vw, 5.5rem) 0 clamp(3rem, 5vw, 4.5rem);
+}
+
+.hero-full-image {
+  min-height: clamp(620px, calc(100svh - 78px), 820px);
+  padding: clamp(4.75rem, 8vw, 6.5rem) 0;
+  background-image: var(--hero-overlay), url("assets/images/hero-blue.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 28%, rgba(115, 203, 255, 0.28), transparent 26%),
+              radial-gradient(circle at 85% 70%, rgba(115, 203, 255, 0.14), transparent 24%);
+  pointer-events: none;
 }
 
 .hero-orb {
@@ -294,9 +310,17 @@ p {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
-  gap: clamp(2rem, 3.6vw, 4rem);
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+  gap: clamp(1.75rem, 3.2vw, 3.25rem);
   align-items: center;
+}
+
+.hero-single-column {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: inherit;
 }
 
 .hero-grid-image {
@@ -334,7 +358,17 @@ p {
 
 .hero-text-short {
   max-width: 620px;
-  font-size: clamp(1rem, 0.97rem + 0.24vw, 1.1rem);
+  font-size: clamp(0.98rem, 0.96rem + 0.2vw, 1.08rem);
+}
+
+.hero-content-panel {
+  max-width: min(100%, 760px);
+  padding: clamp(1.25rem, 2.4vw, 1.8rem) clamp(1.2rem, 2.4vw, 1.8rem) clamp(1.35rem, 2.5vw, 1.9rem);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(10, 31, 56, 0.56) 0%, rgba(8, 24, 43, 0.42) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(4, 17, 34, 0.22);
+  backdrop-filter: blur(5px);
 }
 
 .page-hero-text {
@@ -375,55 +409,20 @@ p {
   gap: 18px;
 }
 
-.hero-side-visual {
-  align-items: center;
-}
-
-.hero-visual-panel {
-  position: relative;
-  width: 100%;
-  max-width: min(100%, 560px);
-  margin-left: auto;
-  padding: 16px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 26px 64px rgba(8, 24, 47, 0.24);
-  backdrop-filter: blur(10px);
+.hero-image-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 24px;
   overflow: hidden;
-}
-
-.hero-visual-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 42%, rgba(115, 203, 255, 0.12));
-  pointer-events: none;
-}
-
-.hero-visual-glow {
-  position: absolute;
-  inset: auto auto -60px -40px;
-  width: 220px;
-  height: 220px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(115, 203, 255, 0.26), transparent 70%);
-  filter: blur(10px);
-  pointer-events: none;
+  box-shadow: var(--shadow-strong);
+  max-width: min(100%, 500px);
+  margin-left: auto;
 }
 
 .hero-feature-image {
   width: 100%;
-  height: clamp(320px, 34vw, 470px);
+  height: clamp(250px, 26vw, 320px);
   object-fit: cover;
-}
-
-.hero-feature-image-abstract {
-  position: relative;
-  z-index: 1;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .hero-image-card-body {
@@ -1254,7 +1253,16 @@ main > .section + .section {
     min-height: auto;
   }
 
-  .hero-visual-panel {
+  .hero-full-image {
+    min-height: clamp(560px, calc(100svh - 78px), 760px);
+    background-position: 68% center;
+  }
+
+  .hero-content-panel {
+    max-width: 100%;
+  }
+
+  .hero-image-card {
     max-width: 100%;
     margin-left: 0;
   }
@@ -1313,6 +1321,12 @@ main > .section + .section {
     padding-top: 82px;
   }
 
+  .hero-full-image {
+    min-height: auto;
+    padding: 82px 0 56px;
+    background-position: 74% center;
+  }
+
   .hero-home {
     min-height: auto;
   }
@@ -1340,6 +1354,12 @@ main > .section + .section {
   .hero h1,
   .page-hero h1 {
     font-size: clamp(2rem, 9vw, 3.1rem);
+  }
+
+  .hero-content-panel {
+    padding: 20px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(9, 27, 48, 0.72) 0%, rgba(8, 24, 43, 0.56) 100%);
   }
 
   .site-logo-image {
@@ -1391,16 +1411,7 @@ main > .section + .section {
   }
 
   .hero-feature-image {
-    height: 260px;
-  }
-
-  .hero-visual-panel {
-    padding: 12px;
-    border-radius: 24px;
-  }
-
-  .hero-feature-image-abstract {
-    border-radius: 18px;
+    height: 230px;
   }
 
   .service-image-wrap {
@@ -1543,12 +1554,18 @@ body.capture-mode .reveal.is-visible {
   border-color: rgba(54, 134, 214, 0.22);
 }
 
-.hero-visual-panel,
+.hero-image-card,
 .premium-gradient {
   position: relative;
 }
 
-.hero-visual-panel::after {
+.hero-full-image .hero-gridline {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+}
+
+.hero-image-card::after {
   content: "";
   position: absolute;
   inset: 0 auto auto 0;
@@ -1574,7 +1591,7 @@ body.capture-mode .reveal.is-visible {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
   }
 
   .proof-card {
