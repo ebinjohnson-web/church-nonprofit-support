@@ -1514,8 +1514,7 @@ body.capture-mode .reveal.is-visible {
 .note-card,
 .contact-card,
 .contact-panel,
-.marketing-service-card,
-.showcase-card {
+.marketing-service-card {
   background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
 }
 
@@ -1529,6 +1528,13 @@ body.capture-mode .reveal.is-visible {
 .marketing-service-card:hover,
 .showcase-card:hover {
   border-color: rgba(54, 134, 214, 0.22);
+}
+
+.showcase-card.premium-gradient {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 28%),
+    linear-gradient(135deg, #10345c, #1c5794 58%, #2c72b7);
+  color: #fff;
 }
 
 .hero-image-card,
