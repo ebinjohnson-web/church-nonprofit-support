@@ -520,18 +520,53 @@ p {
 
 /* Sections */
 .page-hero {
-  padding: clamp(4.25rem, 7vw, 5.5rem) 0 clamp(2.75rem, 5vw, 4rem);
-  background: linear-gradient(180deg, #eef4fb 0%, #f7f9fc 100%);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.5rem, 6vw, 4.9rem) 0 clamp(2rem, 4vw, 3rem);
+  background:
+    radial-gradient(circle at 82% 16%, rgba(115, 203, 255, 0.22), transparent 20%),
+    radial-gradient(circle at 16% 20%, rgba(115, 203, 255, 0.10), transparent 24%),
+    linear-gradient(135deg, #0d2746 0%, #134679 54%, #2366a6 100%);
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 90%);
+  pointer-events: none;
 }
 
 .page-hero-stack {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: clamp(1.5rem, 3vw, 2.25rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .page-hero-copy {
-  width: min(100%, 940px);
+  width: min(100%, 980px);
   margin: 0 auto;
+}
+
+.page-hero .section-label {
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+
+.page-hero h1 {
+  color: #ffffff;
+}
+
+.page-hero .page-hero-text {
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 860px;
 }
 
 .page-hero-banner-card {
@@ -541,8 +576,16 @@ p {
   overflow: hidden;
   border-radius: 28px;
   background: linear-gradient(135deg, #0f2b48 0%, #184f8f 58%, #2b72b8 100%);
-  border: 1px solid rgba(22, 95, 168, 0.14);
-  box-shadow: 0 24px 60px rgba(13, 35, 67, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 60px rgba(5, 18, 37, 0.30);
+}
+
+.page-hero-banner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 16, 31, 0.10) 0%, rgba(4, 16, 31, 0.04) 100%);
+  pointer-events: none;
 }
 
 .page-hero-banner-card::after {
@@ -559,6 +602,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
+  filter: brightness(0.86) contrast(1.06) saturate(0.95);
 }
 
 .section {
@@ -1415,8 +1459,12 @@ main > .section + .section {
     padding-top: 82px;
   }
 
+  .page-hero {
+    padding: 82px 0 44px;
+  }
+
   .page-hero-stack {
-    gap: 1.4rem;
+    gap: 0.95rem;
   }
 
   .page-hero-banner-card {
