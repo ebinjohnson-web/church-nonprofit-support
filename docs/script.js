@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   addReveal(".hero-content", { variant: "up", immediate: true, baseDelay: 40 });
-  addReveal(".hero-image-card", { variant: "right", immediate: true, baseDelay: 140 });
+  addReveal(".hero-monitor-stage", { variant: "right", immediate: true, baseDelay: 140 });
   addReveal(".page-hero .container", { variant: "up", immediate: true, baseDelay: 60 });
 
   addReveal(".section-header", { variant: "up" });
@@ -113,24 +113,27 @@ document.addEventListener("DOMContentLoaded", () => {
   addReveal(".proof-image-card", { variant: "right" });
 
   const revealElements = Array.from(document.querySelectorAll(".reveal"));
+  const revealAll = () => {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+  };
 
   if (captureMode || prefersReducedMotion || !("IntersectionObserver" in window)) {
-    revealElements.forEach((element) => element.classList.add("is-visible"));
+    revealAll();
     return;
   }
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting || entry.intersectionRatio > 0) {
           entry.target.classList.add("is-visible");
           obs.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.14,
-      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.08,
+      rootMargin: "0px 0px -4% 0px",
     }
   );
 
@@ -144,4 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(element);
   });
+
+  window.addEventListener(
+    "load",
+    () => {
+      window.setTimeout(revealAll, 900);
+    },
+    { once: true }
+  );
+
+  window.setTimeout(revealAll, 1800);
 });
