@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const captureMode = urlParams.get("capture") === "1";
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealRegistry = new WeakSet();
+  const depthElements = Array.from(document.querySelectorAll(".hero-content-panel, .hero-monitor-stage, .proof-image-card"));
 
   if (captureMode) {
     document.body.classList.add("capture-mode");
@@ -94,23 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  addReveal(".hero-content", { variant: "up", immediate: true, baseDelay: 40 });
-  addReveal(".hero-monitor-stage", { variant: "right", immediate: true, baseDelay: 140 });
-  addReveal(".page-hero .container", { variant: "up", immediate: true, baseDelay: 60 });
+  addReveal(".hero-content", { variant: "clip", immediate: true, baseDelay: 40 });
+  addReveal(".hero-monitor-stage", { variant: "scale-soft", immediate: true, baseDelay: 180 });
+  addReveal(".page-hero .container", { variant: "clip", immediate: true, baseDelay: 60 });
 
-  addReveal(".section-header", { variant: "up" });
-  addReveal(".service-visual-card", { variant: "up", stagger: true });
-  addReveal(".task-card", { variant: "up", stagger: true });
-  addReveal(".feature-card", { variant: "up", stagger: true });
-  addReveal(".audience-card", { variant: "up", stagger: true });
-  addReveal(".marketing-service-card", { variant: "up", stagger: true });
-  addReveal(".step-card", { variant: "up", stagger: true });
-  addReveal(".note-card", { variant: "up", stagger: true });
-  addReveal(".stacked-item", { variant: "up", stagger: true });
-  addReveal(".contact-panel, .contact-card", { variant: "up", stagger: true });
-  addReveal(".premium-gradient, .showcase-card", { variant: "right" });
-  addReveal(".proof-copy", { variant: "left" });
-  addReveal(".proof-image-card", { variant: "right" });
+  addReveal(".section-header", { variant: "clip" });
+  addReveal(".section-label, .proof-kicker", { variant: "clip", stagger: true, step: 60 });
+  addReveal(".service-visual-card", { variant: "mask", stagger: true, baseDelay: 40, step: 110 });
+  addReveal(".task-card", { variant: "scale-soft", stagger: true, step: 85 });
+  addReveal(".feature-card", { variant: "scale-soft", stagger: true, step: 95 });
+  addReveal(".audience-card", { variant: "scale-soft", stagger: true, step: 95 });
+  addReveal(".marketing-service-card", { variant: "mask", stagger: true, step: 95 });
+  addReveal(".step-card", { variant: "scale-soft", stagger: true, step: 85 });
+  addReveal(".note-card", { variant: "mask", stagger: true, step: 85 });
+  addReveal(".stacked-item", { variant: "mask", stagger: true, step: 90 });
+  addReveal(".contact-panel, .contact-card", { variant: "mask", stagger: true, step: 110 });
+  addReveal(".premium-gradient, .showcase-card", { variant: "mask" });
+  addReveal(".proof-copy", { variant: "clip" });
+  addReveal(".proof-image-card", { variant: "scale-soft" });
 
   const revealElements = Array.from(document.querySelectorAll(".reveal"));
   const revealAll = () => {
@@ -132,8 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.08,
-      rootMargin: "0px 0px -4% 0px",
+      threshold: 0.12,
+      rootMargin: "0px 0px -6% 0px",
     }
   );
 
@@ -148,13 +150,39 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(element);
   });
 
+  const applyDepth = () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    depthElements.forEach((element, index) => {
+      const intensity = index === 1 ? 0.045 : 0.02;
+      const shift = Math.max(-14, Math.min(14, scrollY * intensity * -1));
+      element.classList.add("motion-depth");
+      element.style.setProperty("--depth-shift", `${shift.toFixed(2)}px`);
+    });
+  };
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      applyDepth();
+      ticking = false;
+    });
+  };
+
+  applyDepth();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
   window.addEventListener(
     "load",
     () => {
-      window.setTimeout(revealAll, 900);
+      window.setTimeout(revealAll, 1000);
     },
     { once: true }
   );
 
-  window.setTimeout(revealAll, 1800);
+  window.setTimeout(revealAll, 1900);
 });
