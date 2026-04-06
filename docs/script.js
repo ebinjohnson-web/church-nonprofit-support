@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  addReveal(".hero-orbit", { variant: "clip", immediate: true, baseDelay: 20 });
   addReveal(".hero-content", { variant: "clip", immediate: true, baseDelay: 40 });
   addReveal(".hero-monitor-stage", { variant: "scale-soft", immediate: true, baseDelay: 180 });
   addReveal(".page-hero .container", { variant: "clip", immediate: true, baseDelay: 60 });
