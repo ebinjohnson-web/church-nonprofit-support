@@ -354,6 +354,7 @@ p {
   pointer-events: none;
 }
 
+
 .hero-light-rig {
   position: absolute;
   inset: 0;
@@ -363,64 +364,100 @@ p {
 }
 
 .hero-light-panel,
-.hero-light-haze {
+.hero-light-haze,
+.hero-stage-glow {
   position: absolute;
-  opacity: 0.68;
 }
 
 .hero-light-panel {
-  top: -10%;
-  bottom: -18%;
-  width: clamp(180px, 16vw, 300px);
+  top: -12%;
+  bottom: -20%;
+  width: clamp(180px, 15vw, 280px);
   border-radius: 999px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.18) 22%,
-    rgba(159, 226, 255, 0.56) 48%,
-    rgba(255, 255, 255, 0.14) 74%,
+    rgba(196, 236, 255, 0.08) 18%,
+    rgba(154, 220, 255, 0.34) 44%,
+    rgba(196, 236, 255, 0.12) 72%,
     rgba(255, 255, 255, 0) 100%
   );
-  box-shadow:
-    0 0 36px rgba(173, 231, 255, 0.18),
-    0 0 110px rgba(115, 203, 255, 0.14);
-  transform-origin: center;
+  opacity: 0.32;
+  transform-origin: center top;
+  will-change: opacity, transform;
 }
 
 .hero-light-panel-left {
-  left: 54%;
-  transform: rotate(-14deg);
-  animation: heroLightColumnLeft 12s ease-in-out infinite;
+  left: 55%;
+  transform: rotate(-13deg);
+  animation: heroLightColumnLeft 8.5s ease-in-out infinite;
 }
 
 .hero-light-panel-center {
-  left: 68%;
-  width: clamp(220px, 18vw, 340px);
-  opacity: 0.84;
-  transform: rotate(2deg);
-  animation: heroLightColumnCenter 9s ease-in-out infinite;
+  left: 69%;
+  width: clamp(220px, 18vw, 330px);
+  opacity: 0.46;
+  transform: rotate(1deg);
+  animation: heroLightColumnCenter 7.2s ease-in-out infinite;
 }
 
 .hero-light-panel-right {
-  left: 82%;
-  transform: rotate(13deg);
-  animation: heroLightColumnRight 11s ease-in-out infinite;
+  left: 83%;
+  transform: rotate(12deg);
+  animation: heroLightColumnRight 9.2s ease-in-out infinite;
 }
 
 .hero-light-haze {
-  right: clamp(3%, 8vw, 10%);
-  bottom: clamp(4%, 8vw, 12%);
-  width: clamp(260px, 34vw, 620px);
-  height: clamp(180px, 18vw, 280px);
+  right: clamp(4%, 8vw, 10%);
+  bottom: clamp(12%, 15vw, 18%);
+  width: clamp(300px, 36vw, 720px);
+  height: clamp(220px, 22vw, 340px);
   border-radius: 50%;
   background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(173, 231, 255, 0.18) 34%,
-    rgba(115, 203, 255, 0.08) 56%,
-    rgba(115, 203, 255, 0) 100%
+    ellipse at center,
+    rgba(205, 239, 255, 0.18) 0%,
+    rgba(111, 196, 255, 0.16) 34%,
+    rgba(55, 135, 214, 0.08) 60%,
+    rgba(55, 135, 214, 0) 100%
   );
-  animation: heroHazePulse 8.4s ease-in-out infinite;
+  opacity: 0.72;
+  transform-origin: center;
+  will-change: opacity, transform;
+  animation: heroHazePulse 7.4s ease-in-out infinite;
+}
+
+.hero-stage-glow {
+  bottom: clamp(14%, 13vw, 19%);
+  height: clamp(120px, 12vw, 170px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(214, 242, 255, 0.32) 0%,
+    rgba(120, 205, 255, 0.18) 42%,
+    rgba(120, 205, 255, 0) 78%
+  );
+  opacity: 0.34;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.hero-stage-glow-left {
+  left: 52%;
+  width: clamp(160px, 16vw, 260px);
+  animation: heroStageGlowSoft 6.6s ease-in-out infinite;
+}
+
+.hero-stage-glow-center {
+  left: 64%;
+  width: clamp(300px, 28vw, 520px);
+  opacity: 0.62;
+  animation: heroStageGlowMain 5.8s ease-in-out infinite;
+}
+
+.hero-stage-glow-right {
+  left: 80%;
+  width: clamp(150px, 15vw, 240px);
+  animation: heroStageGlowSoft 7.1s ease-in-out infinite reverse;
 }
 
 .hero-gridline {
@@ -574,15 +611,13 @@ p {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-
-
 .hero-bottom-trace {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 22px;
+  height: 28px;
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
@@ -590,64 +625,61 @@ p {
 
 .hero-bottom-line,
 .hero-bottom-glow,
-.hero-bottom-sheen {
+.hero-bottom-core {
   position: absolute;
   left: 0;
   right: 0;
-  border-radius: 999px;
+  transform-origin: center;
+  will-change: opacity, transform;
 }
 
 .hero-bottom-line {
   bottom: 4px;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.52) 18%,
-    rgba(255, 255, 255, 0.9) 50%,
-    rgba(255, 255, 255, 0.52) 82%,
+    rgba(255, 255, 255, 0.44) 18%,
+    rgba(255, 255, 255, 0.72) 50%,
+    rgba(255, 255, 255, 0.44) 82%,
     rgba(255, 255, 255, 0.12) 100%
   );
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.2),
-    0 0 26px rgba(173, 231, 255, 0.14);
-  opacity: 0.82;
-  animation: heroBottomLinePulse 6.8s ease-in-out infinite;
+  opacity: 0.52;
+  animation: heroBottomLinePulse 6.2s ease-in-out infinite;
 }
 
 .hero-bottom-glow {
-  left: -2%;
-  right: -2%;
-  bottom: -3px;
-  height: 18px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(173, 231, 255, 0.12) 16%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(173, 231, 255, 0.12) 84%,
-    rgba(255, 255, 255, 0) 100%
+  left: -1%;
+  right: -1%;
+  bottom: -2px;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(229, 246, 255, 0.26) 0%,
+    rgba(160, 223, 255, 0.14) 42%,
+    rgba(160, 223, 255, 0) 78%
   );
-  opacity: 0.72;
-  transform-origin: center;
-  animation: heroBottomGlowPulse 6.8s ease-in-out infinite;
+  opacity: 0.56;
+  animation: heroBottomGlowPulse 5.6s ease-in-out infinite;
 }
 
-.hero-bottom-sheen {
-  top: 1px;
-  width: clamp(200px, 20vw, 360px);
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.78) 46%,
-    rgba(255, 255, 255, 0) 100%
+.hero-bottom-core {
+  left: 26%;
+  right: 26%;
+  bottom: 2px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(208, 240, 255, 0.34) 55%,
+    rgba(208, 240, 255, 0) 100%
   );
-  opacity: 0.72;
-  transform: translate3d(-120%, 0, 0);
-  animation: heroBottomSweep 8.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  opacity: 0.64;
+  animation: heroBottomCorePulse 4.8s ease-in-out infinite;
 }
 
+/* Page hero */
 /* Page hero */
 
 .page-hero {
@@ -1764,85 +1796,100 @@ main > .section + .section {
 
 @keyframes heroLightColumnLeft {
   0%, 100% {
-    opacity: 0.34;
-    transform: translate3d(0, 0, 0) rotate(-14deg) scaleY(1);
+    opacity: 0.2;
+    transform: rotate(-13deg) scaleY(0.98);
   }
   50% {
-    opacity: 0.6;
-    transform: translate3d(-12px, 6px, 0) rotate(-16deg) scaleY(1.06);
+    opacity: 0.42;
+    transform: rotate(-14deg) scaleY(1.05);
   }
 }
 
 @keyframes heroLightColumnCenter {
   0%, 100% {
-    opacity: 0.58;
-    transform: translate3d(0, 0, 0) rotate(2deg) scaleY(1);
+    opacity: 0.34;
+    transform: rotate(1deg) scaleY(0.98);
   }
   50% {
-    opacity: 0.9;
-    transform: translate3d(10px, -8px, 0) rotate(4deg) scaleY(1.08);
+    opacity: 0.64;
+    transform: rotate(2deg) scaleY(1.08);
   }
 }
 
 @keyframes heroLightColumnRight {
   0%, 100% {
-    opacity: 0.32;
-    transform: translate3d(0, 0, 0) rotate(13deg) scaleY(1);
+    opacity: 0.18;
+    transform: rotate(12deg) scaleY(0.98);
   }
   50% {
-    opacity: 0.56;
-    transform: translate3d(12px, 8px, 0) rotate(15deg) scaleY(1.05);
+    opacity: 0.38;
+    transform: rotate(13deg) scaleY(1.04);
   }
 }
 
 @keyframes heroHazePulse {
   0%, 100% {
-    opacity: 0.5;
-    transform: scale(0.96);
+    opacity: 0.48;
+    transform: scale(0.98);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.78;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes heroStageGlowMain {
+  0%, 100% {
+    opacity: 0.42;
+    transform: scaleX(0.96) scaleY(0.94);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scaleX(1.03) scaleY(1.05);
+  }
+}
+
+@keyframes heroStageGlowSoft {
+  0%, 100% {
+    opacity: 0.18;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.38;
     transform: scale(1.04);
   }
 }
 
 @keyframes heroBottomLinePulse {
   0%, 100% {
-    opacity: 0.56;
-    transform: scaleX(0.995);
+    opacity: 0.34;
+    transform: scaleX(0.985);
   }
   50% {
-    opacity: 0.96;
+    opacity: 0.66;
     transform: scaleX(1);
   }
 }
 
 @keyframes heroBottomGlowPulse {
   0%, 100% {
-    opacity: 0.32;
-    transform: scaleX(0.96);
+    opacity: 0.28;
+    transform: scaleX(0.96) scaleY(0.92);
   }
   50% {
-    opacity: 0.8;
-    transform: scaleX(1.02);
+    opacity: 0.58;
+    transform: scaleX(1.02) scaleY(1.08);
   }
 }
 
-@keyframes heroBottomSweep {
-  0% {
-    opacity: 0;
-    transform: translate3d(-120%, 0, 0) skewX(-18deg);
+@keyframes heroBottomCorePulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleX(0.82);
   }
-  12% {
-    opacity: 0.78;
-  }
-  52% {
-    opacity: 0.78;
-    transform: translate3d(210%, 0, 0) skewX(-18deg);
-  }
-  70%, 100% {
-    opacity: 0;
-    transform: translate3d(210%, 0, 0) skewX(-18deg);
+  50% {
+    opacity: 0.82;
+    transform: scaleX(1);
   }
 }
 
@@ -1942,6 +1989,18 @@ main > .section + .section {
   .hero-light-haze {
     right: 4%;
     width: min(56vw, 520px);
+  }
+
+  .hero-stage-glow-left {
+    left: 50%;
+  }
+
+  .hero-stage-glow-center {
+    left: 62%;
+  }
+
+  .hero-stage-glow-right {
+    left: 78%;
   }
 
   .hero-bottom-trace {
@@ -2065,14 +2124,33 @@ main > .section + .section {
 
   .hero-light-haze {
     right: -2%;
-    bottom: 12%;
+    bottom: 14%;
     width: min(72vw, 360px);
     height: min(42vw, 210px);
   }
 
+  .hero-stage-glow-left {
+    left: 26%;
+    width: min(30vw, 140px);
+    bottom: 20%;
+  }
+
+  .hero-stage-glow-center {
+    left: 46%;
+    width: min(62vw, 280px);
+    bottom: 18%;
+    opacity: 0.74;
+  }
+
+  .hero-stage-glow-right {
+    left: 74%;
+    width: min(24vw, 110px);
+    bottom: 20%;
+  }
+
   .hero-bottom-trace {
     bottom: 0;
-    height: 18px;
+    height: 20px;
   }
 
   .hero-bottom-line {
@@ -2080,11 +2158,13 @@ main > .section + .section {
   }
 
   .hero-bottom-glow {
-    height: 14px;
+    height: 16px;
   }
 
-  .hero-bottom-sheen {
-    width: min(52vw, 220px);
+  .hero-bottom-core {
+    left: 18%;
+    right: 18%;
+    height: 7px;
   }
 
   .hero-monitor-stage {
@@ -2234,9 +2314,10 @@ main > .section + .section {
   .trust-card,
   .hero-light-panel,
   .hero-light-haze,
+  .hero-stage-glow,
   .hero-bottom-line,
   .hero-bottom-glow,
-  .hero-bottom-sheen {
+  .hero-bottom-core {
     animation: none !important;
     transition: none !important;
     transform: none !important;
@@ -2259,9 +2340,10 @@ body.capture-mode .hero-content-panel,
 body.capture-mode .hero-monitor-image,
 body.capture-mode .hero-light-panel,
 body.capture-mode .hero-light-haze,
+body.capture-mode .hero-stage-glow,
 body.capture-mode .hero-bottom-line,
 body.capture-mode .hero-bottom-glow,
-body.capture-mode .hero-bottom-sheen {
+body.capture-mode .hero-bottom-core {
   animation: none !important;
   transition: none !important;
   transform: none !important;
