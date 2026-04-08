@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addReveal(".premium-gradient, .showcase-card", { variant: "mask" });
   addReveal(".demo-card", { variant: "mask", stagger: true, step: 100 });
   addReveal(".trust-card", { variant: "scale-soft", stagger: true, step: 90 });
+  addReveal(".social-spotlight", { variant: "mask" });
 
   const revealElements = Array.from(document.querySelectorAll(".reveal"));
   const revealAll = () => {
