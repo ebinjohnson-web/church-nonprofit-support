@@ -1208,8 +1208,9 @@ main > .section + .section {
 
 .demo-card-body {
   padding: clamp(1.35rem, 2.3vw, 1.8rem);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto minmax(4.7rem, auto) minmax(8.2rem, auto) auto;
+  align-content: start;
   flex: 1;
 }
 
@@ -1248,11 +1249,13 @@ main > .section + .section {
   margin: 0 0 10px;
   font-size: clamp(1.35rem, 1.8vw, 1.75rem);
   line-height: 1.16;
+  align-self: start;
 }
 
 .demo-card p {
   margin: 0;
   color: var(--muted);
+  align-self: start;
 }
 
 .demo-list {
@@ -1266,11 +1269,16 @@ main > .section + .section {
 }
 
 .demo-actions {
-  margin-top: auto;
+  margin-top: 0;
   padding-top: 22px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.demo-actions .btn {
+  width: 100%;
 }
 
 /* Trust section */
@@ -2489,6 +2497,10 @@ main > .section + .section {
 
   .service-image-wrap {
     height: 210px;
+  }
+
+  .demo-card-body {
+    grid-template-rows: auto auto auto auto;
   }
 }
 
