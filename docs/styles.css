@@ -2709,26 +2709,24 @@ html {
   }
 }
 
-/* Mobile tap-target fix for Services links/buttons */
+
+/* Mobile header nav link hit-area fix */
 @media (max-width: 760px) {
+  .site-nav {
+    gap: 0;
+  }
+
   .site-nav a {
-    display: block;
+    display: flex;
+    align-items: center;
     width: 100%;
+    min-height: 44px;
     padding: 8px 0;
+    position: relative;
+    z-index: 1;
   }
 
-  .hero-actions,
-  .cta-band-actions,
-  .contact-button-list {
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-actions .btn,
-  .cta-band-actions .btn,
-  .contact-button-list .contact-link-btn {
-    position: relative;
-    z-index: 3;
-    pointer-events: auto;
+  .site-nav a + a {
+    border-top: 1px solid rgba(215, 227, 240, 0.72);
   }
 }
