@@ -2133,6 +2133,11 @@ main > .section + .section {
     gap: 2rem;
   }
 
+  .hero-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .task-grid,
   .step-grid,
   .audience-grid.three-up,
@@ -2313,7 +2318,9 @@ main > .section + .section {
   }
 
   .hero-split-layout {
-    gap: 1.75rem;
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    align-items: start;
   }
 
   .hero-meta {
@@ -2385,14 +2392,60 @@ main > .section + .section {
     height: 7px;
   }
 
+  .hero-content-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 22px 20px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(9, 27, 48, 0.74) 0%, rgba(8, 24, 43, 0.58) 100%);
+  }
+
+  .hero-home-panel h1 {
+    max-width: none;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    line-height: 1.04;
+  }
+
+  .hero-text,
+  .hero-text-short {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-badges {
+    gap: 8px;
+  }
+
+  .badge-chip {
+    justify-content: center;
+  }
+
+  .hero-actions,
+  .contact-button-list,
+  .demo-actions,
+  .cta-band-actions,
+  .social-topic-list,
+  .social-spotlight-actions {
+    flex-direction: column;
+  }
+
   .hero-monitor-stage {
     justify-content: center;
-    padding-top: 0;
+    align-items: flex-end;
+    min-height: auto;
+    min-width: 0;
+    padding-top: 0.35rem;
   }
 
   .hero-monitor-image,
   .hero-monitor-stage:hover .hero-monitor-image {
-    width: min(100%, 560px);
+    width: min(100%, 420px);
+    max-width: 100%;
     transform: none;
   }
 
@@ -2416,29 +2469,9 @@ main > .section + .section {
     grid-template-columns: 1fr;
   }
 
-  .hero h1,
-  .page-hero h1 {
-    font-size: clamp(2rem, 9vw, 3.1rem);
-  }
-
   .page-hero-copy {
     width: 100%;
     max-width: 100%;
-  }
-
-  .hero-content-panel {
-    max-width: 100%;
-    padding: 20px;
-    border-radius: 22px;
-    background: linear-gradient(180deg, rgba(9, 27, 48, 0.74) 0%, rgba(8, 24, 43, 0.58) 100%);
-  }
-
-  .hero-home-panel h1 {
-    max-width: 12ch;
-  }
-
-  .hero-meta-divider {
-    display: none;
   }
 
   .site-logo-image {
@@ -2465,17 +2498,7 @@ main > .section + .section {
     padding: 24px;
   }
 
-  .contact-button-list,
-  .hero-actions,
-  .demo-actions,
-  .cta-band-actions,
-  .social-topic-list,
-  .social-spotlight-actions {
-    flex-direction: column;
-  }
-
   .contact-link-btn,
-  .badge-chip,
   .btn,
   .btn-outline-primary,
   .footer-social-link {
@@ -2484,14 +2507,6 @@ main > .section + .section {
 
   .social-preview-card {
     padding: 22px;
-  }
-
-  .badge-chip {
-    justify-content: center;
-  }
-
-  .hero-badges {
-    gap: 8px;
   }
 
   .service-image-wrap {
