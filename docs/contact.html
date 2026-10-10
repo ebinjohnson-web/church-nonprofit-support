@@ -33,7 +33,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="refresh.css?v=2" />
+  <link rel="stylesheet" href="experience.css?v=2" />
 
 
   <script type="application/ld+json">
@@ -66,6 +68,9 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="transition-curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="brand brand-image-logo" aria-label="Ebin Johnson home">
@@ -83,6 +88,7 @@
     </button>
 
     <div class="header-actions">
+        <button class="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
       <nav class="site-nav" id="siteNav" aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -91,18 +97,20 @@
       </nav>
 
       <a href="mailto:ebin@ebinjohnson.ca?subject=Support%20Inquiry" class="btn btn-nav header-cta">
-        Request Support
+        Discuss Your Project
       </a>
     </div>
   </div>
 </header>
 
-  <main>
+  <main id="main-content">
 <section class="page-hero page-hero-contact">
+  <div class="entry-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="entry-orbit" aria-hidden="true"><span>✳</span></div>
   <div class="container page-hero-banner-card">
     <div class="page-hero-copy hero-content">
       <p class="section-label">Contact</p>
-      <h1>Start with one simple message</h1>
+      <h1>Your next idea.<br><span class="page-colour-title">Let’s make it happen.</span></h1>
       <p class="page-hero-text">
         Whether you need a website refresh, a simple new site, or ongoing digital support, a short message is enough to begin.
       </p>
@@ -124,7 +132,7 @@
         <li>Your website feels outdated or too text-heavy</li>
         <li>You want a cleaner, more current first impression</li>
         <li>Events, updates, or announcements are not staying current</li>
-        <li>You need a simple brochure-style site for your organization or business</li>
+        <li>You need a simple custom site for your organization or business</li>
         <li>You want support without a heavy agency setup</li>
       </ul>
 
@@ -287,6 +295,6 @@
   </div>
 </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

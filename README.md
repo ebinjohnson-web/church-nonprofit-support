@@ -18,6 +18,24 @@ The primary audience is:
 
 There is also selective support for local businesses where there is a strong fit.
 
+## Local preview
+
+Requires Node.js 18 or newer. No dependency installation or build step is needed.
+
+```sh
+npm run dev
+```
+
+Open `http://127.0.0.1:4173`. Run `npm run check` to check JavaScript syntax.
+GitHub Pages still serves the `docs/` folder directly.
+
+## Colour and motion refresh
+
+- `docs/refresh.css` adds the shared cobalt, coral, lime, and cream theme.
+- The homepage uses existing project screenshots, floating artwork, pointer tilt, and scroll reveals.
+- Pause motion in the header to stop ambient animation. The choice lasts for the browser session and carries across pages.
+- Animation intentionally runs regardless of the system reduced-motion preference. Visitors can pause it manually. Content remains readable without JavaScript.
+
 ## Pages
 
 - `index.html` — Home page
@@ -58,3 +76,9 @@ The site is deployed with GitHub Pages and connected to the custom domain:
 For inquiries related to the website or services:
 
 - `ebin@ebinjohnson.ca`
+
+## Immersive entry experience
+
+The homepage opens with a colourful entry scene on the first visit in a browser session. Choose Enter the website or Take me to the work. The Intro button replays the entry screen. Five-colour curtains connect the intro and internal pages. Hash links skip the intro. `?capture=1` skips the intro and pauses motion for screenshots.
+
+`docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.

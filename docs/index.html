@@ -42,7 +42,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="refresh.css?v=2" />
+  <link rel="stylesheet" href="experience.css?v=2" />
 
   <script type="application/ld+json">
   {
@@ -74,6 +76,23 @@
   </script>
 </head>
 <body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <section class="entry-screen" aria-labelledby="entry-heading">
+    <div class="entry-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="entry-top"><a href="index.html" class="entry-brand" aria-label="Ebin Johnson home"><span class="entry-monogram">EJ.</span><span>Ebin Johnson<small>Independent digital support</small></span></a><span class="entry-location">Sarnia, Ontario · Working with good people</span></div>
+    <div class="entry-orbit" aria-hidden="true"><span>✳</span></div>
+    <div class="entry-content">
+      <p class="entry-kicker"><span></span> Websites. Communications. Possibilities.</p>
+      <h1 id="entry-heading"><span>Small ideas.</span><span class="entry-outline">Big <em>possibilities.</em></span></h1>
+      <p class="entry-description">A colourful corner of the web. Thoughtful websites and practical digital support for people making a difference.</p>
+      <div class="entry-buttons"><a href="#main-content" class="entry-button entry-primary" data-enter="main-content"><span>Enter the website</span><b aria-hidden="true">↗</b></a><a href="#selected-work" class="entry-button entry-secondary" data-enter="selected-work"><span>Take me to the work</span><b aria-hidden="true">↓</b></a></div>
+    </div>
+    <div class="entry-footer"><span>Built with care. A little curiosity. A lot of colour.</span><button type="button" class="entry-pause">Pause motion</button><span class="entry-number" aria-hidden="true">01 / ENTER</span></div>
+    <div class="entry-ticker" aria-hidden="true"><div><span>CREATE ✳ CONNECT ✳ MAKE AN IMPACT ✳ KEEP IT HUMAN ✳ </span><span>CREATE ✳ CONNECT ✳ MAKE AN IMPACT ✳ KEEP IT HUMAN ✳ </span></div></div>
+  </section>
+  <div class="transition-curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand brand-image-logo" aria-label="Ebin Johnson home">
@@ -91,6 +110,8 @@
       </button>
 
       <div class="header-actions">
+        <button class="replay-intro" type="button">Intro ↗</button>
+        <button class="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
         <nav class="site-nav" id="siteNav" aria-label="Main navigation">
           <a href="index.html" class="active" aria-current="page">Home</a>
           <a href="about.html">About</a>
@@ -99,46 +120,114 @@
         </nav>
 
         <a href="mailto:ebin@ebinjohnson.ca?subject=Support%20Inquiry" class="btn btn-nav header-cta">
-          Request Support
+          Discuss Your Project
         </a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero hero-home hero-full-image">
-      <div class="hero-gridline"></div>
-      <div class="hero-image-overlay"></div>
+  <main id="main-content">
+    <section class="studio-hero" aria-labelledby="studio-heading">
+      <div class="container studio-grid">
+        <div class="studio-copy">
+          <p class="studio-eyebrow">Independent website &amp; digital support · Sarnia, ON</p>
+          <h1 class="studio-title" id="studio-heading">Good people.<br>Great work.<br><em>Better websites.</em></h1>
+          <p class="studio-intro">You focus on your community. I’ll help your website, communications, and everyday digital work keep up.</p>
+          <div class="studio-actions">
+            <a href="contact.html" class="btn btn-primary">Let’s talk about your project <span aria-hidden="true">↗</span></a>
+            <a href="#selected-work" class="btn btn-secondary">Explore my work <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="studio-footnote"><span>Churches &amp; nonprofits</span><span>Local businesses</span></p>
+        </div>
+        <div class="project-stage" aria-label="Examples of my website work">
+          <span class="studio-star" aria-hidden="true">✳</span>
+          <div class="project-window">
+            <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>mmphotographi.ca</span></div>
+            <img src="assets/images/mmphotographi-preview.webp" alt="MM Photographi, a live photography website I built" fetchpriority="high" decoding="async" width="900" height="600">
+          </div>
+          <div class="project-mini"><img src="assets/images/anchor-church-preview.jpg" alt="Anchor Church London, a live church website I built" width="600" height="400" decoding="async"></div>
+          <div class="project-label">Thoughtfully built.<small>Made to work in the real world.</small></div>
+        </div>
+      </div>
+      <div class="container hero-bottom"><span><b>Clear design. Practical support. Dependable follow-through.</b></span><a href="about.html">Meet the person behind the work ↗</a></div>
+    </section>
+    <div class="colour-strip" aria-label="Services"><div class="container"><span>Websites with personality</span><span class="spark" aria-hidden="true">✳</span><span>Content that stays current</span><span class="spark" aria-hidden="true">✳</span><span>Workflows that make sense</span><span class="spark" aria-hidden="true">✳</span></div></div>
 
-      <div class="container hero-split-layout">
-        <div class="hero-content hero-content-panel">
-          <p class="eyebrow">For churches, nonprofits, and community organizations</p>
-          <h1>Website, Communications, and Operations Support</h1>
-          <p class="hero-text hero-text-short">
-            Practical help to keep your website current, your communication clear, and your recurring work better organized.
+    <section class="section section-compact" id="selected-work">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-label">Selected work</p>
+          <h2>Real projects. Thoughtful websites.</h2>
+          <p class="section-intro wide">
+            From a welcoming church website to a photography portfolio, each project is shaped around the people it serves.
           </p>
-
-          <div class="hero-badges">
-            <span class="badge-chip">Sarnia, Ontario</span>
-            <span class="badge-chip">Project Management Mindset</span>
-            <span class="badge-chip">Local Support</span>
-          </div>
-
-          <div class="hero-actions">
-            <a href="services.html" class="btn btn-primary">View Services</a>
-            <a href="mailto:ebin@ebinjohnson.ca?subject=Support%20Inquiry" class="btn btn-secondary">Request Support</a>
-          </div>
         </div>
 
-        <div class="hero-monitor-stage">
-          <img
-            src="assets/images/hero-monitor.webp?v=1"
-            alt="Monitor mockup displaying a clean website layout"
-            class="hero-monitor-image"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
+        <article class="proof-card proof-anchor">
+  <div class="proof-copy">
+    <p class="proof-kicker">Live project · Church website</p>
+    <h3>Anchor Church London</h3>
+    <p class="proof-text">A welcoming online home for a church family in London, Ontario. Clear visitor information, church-life pages, and next steps help people explore the community and plan their first Sunday.</p>
+    <ul class="proof-list">
+      <li>A strong visual identity and welcoming first impression</li>
+      <li>Clear paths to plan a visit and explore church life</li>
+      <li>Organized information about groups, serving, and next steps</li>
+      <li>A live website on the church’s own domain</li>
+    </ul>
+    <div class="proof-actions"><a href="https://anchorchurchlondonca.com/" class="btn btn-nav" target="_blank" rel="noopener noreferrer">Visit Anchor Church <span aria-hidden="true">↗</span></a><a href="contact.html" class="btn btn-proof-secondary">Discuss Your Website</a></div>
+  </div>
+  <aside class="proof-side"><div class="proof-image-card image-shell"><img src="assets/images/anchor-church-preview.jpg" alt="Anchor Church London homepage, with the London skyline and Anchored in Jesus headline" class="proof-image" loading="lazy" width="1265" height="712"><div class="proof-image-caption">Live website: Anchor Church London</div></div></aside>
+</article>
+
+<div class="proof-card">
+          <div class="proof-copy">
+            <p class="proof-kicker">Live project</p>
+            <h3>MM Photographi</h3>
+            <p class="proof-text">
+              A distinctive photography website that puts the images first. Thoughtful galleries, clear navigation, and a polished layout help visitors explore the work on any screen.
+            </p>
+
+            <ul class="proof-list">
+              <li>A distinctive design shaped around the photographer’s work</li>
+              <li>A polished experience across desktop and mobile</li>
+              <li>Image-led galleries that make the portfolio easy to explore</li>
+              <li>A live website on the photographer’s own domain</li>
+            </ul>
+
+            <div class="proof-actions">
+              <a
+                href="https://mmphotographi.ca/"
+                class="btn btn-nav"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Live Site
+              </a>
+              <a href="contact.html" class="btn btn-proof-secondary">
+                Request Similar Support
+              </a>
+            </div>
+          </div>
+
+          <aside class="proof-side">
+            <div class="proof-image-card image-shell">
+              <img
+                src="assets/images/mmphotographi-preview.png"
+                data-fallback-srcs="assets/images/mmphotographi-preview.webp|assets/images/MMphotographi-preview.png|assets/images/MMphotographi-preview.webp"
+                alt="Screenshot preview of MM Photographi website"
+                class="proof-image resilient-image"
+                loading="lazy"
+              />
+              <div class="media-fallback media-fallback-proof" aria-hidden="true">
+                <span class="media-fallback-label">Live site</span>
+                <strong>MM Photographi</strong>
+                <p>Published client-facing photography website.</p>
+              </div>
+              <div class="proof-image-caption">
+                Live website example: MM Photographi
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -147,7 +236,7 @@
       <div class="container">
         <div class="section-header center">
           <p class="section-label">How I help</p>
-          <h2>Three simple ways support can start</h2>
+          <h2>A little support. A big difference.</h2>
         </div>
 
         <div class="service-visual-grid">
@@ -205,118 +294,17 @@
       </div>
     </section>
 
-    <section class="section alt-bg section-compact">
-      <div class="container">
-        <div class="section-header center">
-          <p class="section-label">Examples of support</p>
-          <h2>Common tasks I can help with</h2>
-        </div>
 
-        <div class="task-grid">
-          <article class="task-card task-card-compact">
-            <h3>Website updates</h3>
-            <p>Refresh pages, service times, staff details, and event information.</p>
-          </article>
 
-          <article class="task-card task-card-compact">
-            <h3>Announcement posting</h3>
-            <p>Keep reminders, events, and public updates more consistent.</p>
-          </article>
 
-          <article class="task-card task-card-compact">
-            <h3>Bulletin or newsletter uploads</h3>
-            <p>Upload and organize recurring files so people can find them easily.</p>
-          </article>
-
-          <article class="task-card task-card-compact">
-            <h3>Recurring checklists</h3>
-            <p>Create simple steps for work that happens every week or month.</p>
-          </article>
-
-          <article class="task-card task-card-compact">
-            <h3>Trackers and shared files</h3>
-            <p>Improve visibility and follow-through for important recurring work.</p>
-          </article>
-
-          <article class="task-card task-card-compact">
-            <h3>Light AI workflow help</h3>
-            <p>Use simple tools to save time on repeatable admin or communication tasks.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-compact">
-      <div class="container">
-        <div class="section-header center">
-          <p class="section-label">Selected work</p>
-          <h2>Live site and demo portfolio</h2>
-          <p class="section-intro wide">
-            A mix of live published work and recent demo websites built to show clean, modern, editable static-site presentation.
-          </p>
-        </div>
-
-        <div class="proof-card">
-          <div class="proof-copy">
-            <p class="proof-kicker">Live project</p>
-            <h3>MM Photographi</h3>
-            <p class="proof-text">
-              A custom static website created using HTML, CSS, and JavaScript, including responsive layout work,
-              gallery improvements, and live domain publishing.
-            </p>
-
-            <ul class="proof-list">
-              <li>Custom website structure and styling</li>
-              <li>Responsive desktop and mobile layout updates</li>
-              <li>Gallery and browsing refinements</li>
-              <li>Live website published on its own domain</li>
-            </ul>
-
-            <div class="proof-actions">
-              <a
-                href="https://mmphotographi.ca/"
-                class="btn btn-nav"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Live Site
-              </a>
-              <a href="contact.html" class="btn btn-proof-secondary">
-                Request Similar Support
-              </a>
-            </div>
-          </div>
-
-          <aside class="proof-side">
-            <div class="proof-image-card image-shell">
-              <img
-                src="assets/images/mmphotographi-preview.png"
-                data-fallback-srcs="assets/images/mmphotographi-preview.webp|assets/images/MMphotographi-preview.png|assets/images/MMphotographi-preview.webp"
-                alt="Screenshot preview of MM Photographi website"
-                class="proof-image resilient-image"
-                loading="lazy"
-              />
-              <div class="media-fallback media-fallback-proof" aria-hidden="true">
-                <span class="media-fallback-label">Live site</span>
-                <strong>MM Photographi</strong>
-                <p>Published client-facing photography website.</p>
-              </div>
-              <div class="proof-image-caption">
-                Live website example: MM Photographi
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
 
     <section class="section alt-bg section-compact" id="demo-portfolio">
       <div class="container">
         <div class="section-header center">
           <p class="section-label">Demo portfolio</p>
-          <h2>Additional demo websites</h2>
+          <h2>Different brands. Different possibilities.</h2>
           <p class="section-intro wide">
-            These demos help show how different organizations and local brands can be presented with a more polished static website.
+            These demos help show how different organizations and local brands can be presented with a more polished website.
           </p>
         </div>
 
@@ -339,7 +327,7 @@
             <div class="demo-card-body">
               <div class="demo-meta-row">
                 <span class="demo-tag">Church demo</span>
-                <span class="demo-type">Static website</span>
+                <span class="demo-type">Website concept</span>
               </div>
               <h3>Grace Harbour Church Demo</h3>
               <p>
@@ -377,7 +365,7 @@
             <div class="demo-card-body">
               <div class="demo-meta-row">
                 <span class="demo-tag">Food service demo</span>
-                <span class="demo-type">Static website</span>
+                <span class="demo-type">Website concept</span>
               </div>
               <h3>Brick &amp; Board Sandwich Co.</h3>
               <p>
@@ -415,7 +403,7 @@
             <div class="demo-card-body">
               <div class="demo-meta-row">
                 <span class="demo-tag">Salon demo</span>
-                <span class="demo-type">Static website</span>
+                <span class="demo-type">Website concept</span>
               </div>
               <h3>Ritik Hair Salon Demo</h3>
               <p>
@@ -481,7 +469,7 @@
       <div class="container">
         <div class="section-header center">
           <p class="section-label">How it works</p>
-          <h2>A clear first step</h2>
+          <h2>Good work starts with a conversation.</h2>
         </div>
 
         <div class="step-grid">
@@ -510,7 +498,7 @@
       <div class="container cta-band-inner">
         <div>
           <p class="section-label light">Next step</p>
-          <h2>Start with one clear need</h2>
+          <h2>Let’s make your next step a good one.</h2>
           <p>A short email is enough to begin, even if you only have one clear need in mind.</p>
         </div>
 
@@ -579,7 +567,7 @@
   </div>
 </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>
 

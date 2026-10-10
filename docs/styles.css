@@ -2539,33 +2539,7 @@ main > .section + .section {
 
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
-  .reveal,
-  .hero-content-panel,
-  .hero-monitor-image,
-  .service-card-image,
-  .demo-card,
-  .trust-card,
-  .hero-light-panel,
-  .hero-light-haze,
-  .hero-stage-glow,
-  .hero-bottom-line,
-  .hero-bottom-glow,
-  .hero-bottom-core {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    clip-path: none !important;
-  }
-
-  .reveal {
-    opacity: 1 !important;
-  }
-}
 
 body.capture-mode .site-header {
   position: relative;

@@ -1,0 +1,10 @@
+{
+  "name": "ebin-johnson-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/preview.mjs",
+    "check": "node --check docs/script.js"
+  },
+  "engines": { "node": ">=18" }
+}
