@@ -79,10 +79,12 @@ For inquiries related to the website or services:
 
 ## Immersive entry experience
 
-The homepage opens on black with giant white text: Great Work, then Better Websites, followed by the Ebin Johnson logo in white. After about seven seconds it fades automatically into the homepage. The sequence plays on every homepage visit and browser refresh, including refreshing a URL with an anchor. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Direct hash links skip the intro when first opened. `?capture=1` skips the intro and pauses motion for screenshots.
+The homepage opens on black with Great Work and Better Websites revealed letter by letter, followed by the Ebin Johnson logo in white. After about seven seconds it fades automatically into the homepage. The sequence plays on every homepage visit and browser refresh, including refreshing a URL with an anchor. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Direct hash links skip the intro when first opened. `?capture=1` skips the intro and pauses motion for screenshots.
 
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
 
 ## Black theme and vintage lighting
 
-`docs/black-theme.css` is the final shared theme layer: black backgrounds, charcoal cards, warm-white text, and tungsten accents. Each page includes an inline Edison bulb illustration, with glass, socket, filament, and ambient glow. CSS animates the filament and glow through a seven-second dimming cycle. The existing Pause motion control also pauses the bulb.
+`docs/black-theme.css` is the final shared theme layer: black backgrounds, charcoal cards, warm-white text, and tungsten accents. Each page uses a real vintage bulb photograph by Brett Sayles, with CSS exposure and optical bloom through a 6.4-second dim-to-bright cycle. Attribution and source are recorded in docs/assets/images/PHOTO-CREDIT.md. The existing Pause motion control also pauses the bulb.
+
+The homepage is intentionally concise: a short hero, two live projects, four concept previews, and a contact link. Detailed service and background information stays on the inner pages.
