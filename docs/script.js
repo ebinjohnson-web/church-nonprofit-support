@@ -137,21 +137,33 @@ entryPause?.addEventListener('click', () => {
 });
 motionButton?.addEventListener('click', syncEntryPause);
 syncEntryPause();
+let introFadeTimer;
+let introEndTimer;
+function clearIntroTimers() {
+  clearTimeout(introFadeTimer);
+  clearTimeout(introEndTimer);
+}
 function showEntry() {
   if (!entryScreen || transitionBusy) return;
+  clearIntroTimers();
+  if (motionDisabled()) { finishEntry('main-content'); return; }
   closeMenu();
+  document.body.classList.remove('intro-finishing');
   document.body.classList.add('entry-active');
   document.body.classList.remove('site-entered', 'entry-leaving');
   pageRegions.forEach(region => { region.inert = true; });
   entryScreen.inert = false;
   entryScreen.querySelector('[data-enter]')?.focus({ preventScroll:true });
+  introFadeTimer = setTimeout(() => document.body.classList.add('intro-finishing'), 4600);
+  introEndTimer = setTimeout(() => finishEntry('main-content'), 5100);
 }
 function finishEntry(targetId) {
+  clearIntroTimers();
   entryScreen.inert = true;
   pageRegions.forEach(region => { region.inert = false; });
-  document.body.classList.remove('entry-active', 'entry-leaving');
+  document.body.classList.remove('entry-active', 'entry-leaving', 'intro-finishing');
   document.body.classList.add('site-entered');
-  writeSession('intro-entered', 'true');
+  writeSession('intro-entered-v2', 'true');
   const target = document.getElementById(targetId) || document.getElementById('main-content');
   if (targetId === 'selected-work') {
     target.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
@@ -162,6 +174,8 @@ function finishEntry(targetId) {
 }
 function enterSite(targetId) {
   if (transitionBusy) return;
+  clearIntroTimers();
+  if (entryScreen?.classList.contains('cinematic-intro')) { finishEntry(targetId); return; }
   if (motionDisabled()) { finishEntry(targetId); return; }
   transitionBusy = true;
   document.body.classList.add('entry-leaving', 'transition-running');
@@ -183,7 +197,7 @@ document.querySelector('.skip-link')?.addEventListener('click', event => {
   }
 });
 if (entryScreen) {
-  if (!captureMode && !location.hash && readSession('intro-entered') !== 'true') showEntry();
+  if (!captureMode && !location.hash && readSession('intro-entered-v2') !== 'true') showEntry();
   else entryScreen.inert = true;
 }
 if (readSession('page-transition') === 'true') {

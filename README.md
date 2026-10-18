@@ -79,6 +79,6 @@ For inquiries related to the website or services:
 
 ## Immersive entry experience
 
-The homepage opens with a colourful entry scene on the first visit in a browser session. Choose Enter the website or Take me to the work. The Intro button replays the entry screen. Five-colour curtains connect the intro and internal pages. Hash links skip the intro. `?capture=1` skips the intro and pauses motion for screenshots.
+The homepage opens on black with giant white text: Great Work, then Better Websites. After about five seconds it fades automatically into the homepage. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Hash links skip the intro. `?capture=1` skips the intro and pauses motion for screenshots.
 
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
