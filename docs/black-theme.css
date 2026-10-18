@@ -81,21 +81,13 @@ body.black-theme .transition-curtain i:nth-child(2),body.black-theme .transition
 body.black-theme .transition-curtain i:nth-child(3) { background:#383127; }
 body.black-theme .pointer-trail i { background:#e8c28c; }
 
-/* A hanging Edison bulb: separate glass, filament, and slowly breathing glow. */
+/* Photographic bulb placement. */
 .bulb-stage { position:relative; display:flex; justify-content:center; align-items:flex-start; min-height:580px; isolation:isolate; }
 .bulb-stage::before { content:""; position:absolute; top:-180px; height:200px; width:3px; background:#38352e; z-index:-1; }
-.vintage-bulb { display:block; width:380px; height:580px; max-width:100%; overflow:visible; }
-.bulb-aura { position:absolute; width:450px; height:450px; max-width:120%; top:145px; border-radius:50%; background:radial-gradient(ellipse,#d58a351c,transparent 68%); animation:tungsten-glow 7s ease-in-out infinite; pointer-events:none; z-index:-1; }
-.bulb-radiance,.bulb-filament { animation:tungsten-glow 7s ease-in-out infinite; }
-.bulb-caption { position:absolute; bottom:0; text-align:center; color:#c9baa4; font-size:.84rem; letter-spacing:.02em; margin:0; }
-.bulb-caption span { display:block; font-size:.6rem; letter-spacing:.23em; color:#85755e; margin-bottom:5px; }
 .page-bulb { position:absolute; right:4%; top:-90px; width:300px; height:460px; pointer-events:none; z-index:-1; }
-.page-bulb .vintage-bulb { width:300px; height:460px; }
-.motion-paused .bulb-radiance,.motion-paused .bulb-filament { opacity:.85; }
-@keyframes tungsten-glow { 0%,100% { opacity:1; } 38% { opacity:.25; } 67% { opacity:.85; } 82% { opacity:.55; } }
 @media(max-width:1100px) and (min-width:761px) {
   body.black-theme .studio-grid { grid-template-columns:1.2fr .8fr; gap:20px; }
-  .bulb-stage { min-height:500px; }.vintage-bulb { height:500px; width:328px; }
+  .bulb-stage { min-height:500px; }
   body.black-theme .page-hero .page-hero-copy { max-width:75%; }
   .page-bulb { right:-35px; opacity:.65; }
 }
@@ -103,13 +95,9 @@ body.black-theme .pointer-trail i { background:#e8c28c; }
   body.black-theme .studio-hero { padding-top:40px; }
   .bulb-stage { min-height:440px; margin-top:-15px; }
   .bulb-stage::before { display:none; }
-  .vintage-bulb { width:288px; height:440px; }
-  .bulb-aura { width:340px; height:340px; top:100px; }
-  .bulb-caption { bottom:0; }
   body.black-theme .hero-bottom { margin-top:25px; }
   body.black-theme .page-hero .page-hero-copy { max-width:100%; }
   .page-bulb { top:-115px; right:-30px; width:190px; height:290px; opacity:.4; }
-  .page-bulb .vintage-bulb { width:190px; height:290px; }
 }
 
 /* Real photography: fixed glass and socket, with only the filament animated. */
