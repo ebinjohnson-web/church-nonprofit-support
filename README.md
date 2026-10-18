@@ -82,3 +82,7 @@ For inquiries related to the website or services:
 The homepage opens on black with giant white text: Great Work, then Better Websites, followed by the Ebin Johnson logo in white. After about seven seconds it fades automatically into the homepage. The sequence plays on every homepage visit and browser refresh, including refreshing a URL with an anchor. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Direct hash links skip the intro when first opened. `?capture=1` skips the intro and pauses motion for screenshots.
 
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
+
+## Black theme and vintage lighting
+
+`docs/black-theme.css` is the final shared theme layer: black backgrounds, charcoal cards, warm-white text, and tungsten accents. Each page includes an inline Edison bulb illustration, with glass, socket, filament, and ambient glow. CSS animates the filament and glow through a seven-second dimming cycle. The existing Pause motion control also pauses the bulb.

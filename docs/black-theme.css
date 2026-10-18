@@ -1,0 +1,113 @@
+/* Black, warm white, and tungsten. Loaded after the earlier colour treatments. */
+:root {
+  color-scheme:dark;
+  --bg:#050505; --surface:#111110; --surface-soft:#191816; --text:#f0eee9;
+  --muted:#b4b0a8; --primary:#e8c28c; --primary-2:#efd5ae; --primary-3:#e8c28c;
+  --accent:#e8c28c; --border:#302d27; --border-strong:#494236;
+  --highlight-soft:#181714; --shadow:none; --shadow-strong:0 20px 60px #0005;
+  --electric-pink:#cdbda6; --tangerine:#e8c28c; --aqua:#e8c28c; --violet:#b6afa4;
+}
+body.black-theme { background:#050505; color:var(--text); }
+body.black-theme ::selection { background:#e8c28c; color:#111; }
+body.black-theme :is(h1,h2,h3,h4) { color:#f0eee9; }
+body.black-theme :is(.section-intro,.proof-text,.proof-list,.marketing-list,.hero-text) { color:#b4b0a8; }
+body.black-theme :is(.site-header,.site-nav),body.black-theme.home-page .site-header {
+  background:#080808f5; border-color:#282623; box-shadow:none;
+}
+body.black-theme .site-logo-image { filter:brightness(0) invert(1); }
+body.black-theme .site-nav a { color:#b4b0a8; }
+body.black-theme .site-nav a:is(.active,:hover) { color:#f0eee9; }
+body.black-theme .site-nav a::after { background:#e8c28c; }
+body.black-theme :is(.motion-toggle,.menu-toggle,.replay-intro) { color:#c2bcb2; background:transparent; border-color:#3b3731; }
+body.black-theme .replay-intro:hover { color:#fff; }
+body.black-theme .scroll-progress { background:#e8c28c; }
+body.black-theme .skip-link { background:#e8c28c; color:#111; }
+body.black-theme :is(a,button):focus-visible { outline-color:#e8c28c; }
+body.black-theme .btn { box-shadow:none; }
+body.black-theme :is(.btn-nav,.btn-primary,.btn-light) { background:#eee8dd; color:#14120e; border-color:#eee8dd; }
+body.black-theme :is(.btn-nav,.btn-primary,.btn-light):hover { background:#e8c28c; color:#111; border-color:#e8c28c; box-shadow:0 6px 24px #e8c28c20; }
+body.black-theme :is(.btn-secondary,.btn-outline-primary,.btn-outline-light,.btn-proof-secondary,.contact-link-btn) { color:#e7e1d6; background:transparent; border:1px solid #565046; }
+body.black-theme :is(.btn-secondary,.btn-outline-primary,.btn-proof-secondary,.contact-link-btn):hover { color:#fff; border-color:#bca582; background:#ffffff09; }
+body.black-theme .studio-hero { background:#050505; padding-top:45px; }
+body.black-theme .studio-hero::before { display:none; }
+body.black-theme .studio-hero::after { background-size:90px 90px; opacity:.35; }
+body.black-theme .studio-title { color:#f4f1eb; }
+body.black-theme .studio-title em,body.black-theme .page-colour-title {
+  background:none; -webkit-text-fill-color:#e8c28c; color:#e8c28c; animation:none;
+}
+body.black-theme .studio-title em::after { background:#8c734f; height:2px; }
+body.black-theme .studio-eyebrow { color:#c0a783; }
+body.black-theme .studio-eyebrow::before { background:#edc68e; box-shadow:0 0 18px #edc68e44; }
+body.black-theme :is(.studio-intro,.studio-footnote,.hero-bottom) { color:#b4b0a8; }
+body.black-theme .hero-bottom { border-color:#302d27; margin-top:30px; }
+body.black-theme .hero-bottom b { color:#d6d0c5; }
+body.black-theme .hero-bottom a { color:#d9bd94; }
+body.black-theme .studio-footnote span+span::before { color:#8c734f; }
+body.black-theme .colour-strip { background:#0b0b0a; color:#bcb5a9; border-block:1px solid #302d27; }
+body.black-theme .moving-strip .spark { color:#8c734f; }
+body.black-theme :is(.section,.section:not(.alt-bg):not(.cta-band)) { background:#080808; }
+body.black-theme .alt-bg,body.black-theme:not(.home-page) .alt-bg { background:#0c0c0b; }
+body.black-theme :is(.section-label,.proof-kicker) { color:#bfa47d; }
+body.black-theme :is(.service-visual-card,.task-card,.step-card,.demo-card,.marketing-service-card,.audience-card,.trust-card,.contact-card,.contact-panel,.feature-card,.soft-card,.note-card,.stacked-item,.proof-card,.premium-gradient) {
+  color:#eee8dd; background:#111110; border:1px solid #302d27; box-shadow:none;
+}
+body.black-theme .proof-anchor { background:#151310; border-color:#493d2e; }
+body.black-theme :is(.service-visual-card,.task-card,.step-card,.demo-card,.marketing-service-card,.audience-card,.stacked-item):hover {
+  background:#181613; border-color:#806744; box-shadow:0 16px 45px #0006;
+}
+body.black-theme :is(.proof-copy h3,.demo-card h3,.section h2) { color:#f0eee9; }
+body.black-theme .proof-list li { color:#b4b0a8; }
+body.black-theme .proof-image-card { border-color:#34312a; background:#161512; box-shadow:0 20px 40px #0005; }
+body.black-theme .proof-image-caption { color:#e5d9c6; background:#0a0908e8; border-color:#4e4232; }
+body.black-theme :is(.service-image-wrap,.demo-card-media) { background:#171614; }
+body.black-theme .service-card-image { filter:grayscale(1) brightness(.65); }
+body.black-theme :is(.demo-tag,.demo-type,.contact-chip,.badge-chip) { color:#cbb99f; background:#1d1a16; border-color:#4a4032; }
+body.black-theme .step-card .step-number { color:#e8c28c; background:#2d251b; box-shadow:none; }
+body.black-theme .placeholder-note { background:#191714; border-color:#51432f; }
+body.black-theme :is(.contact-card,.contact-panel,.contact-detail) a { color:#e8c28c; }
+body.black-theme .about-copy-list .stacked-item { border-left-color:#8c734f; }
+body.black-theme .cta-band { background:#14120f; border-block:1px solid #3a3023; animation:none; }
+body.black-theme .cta-band::after { color:#d4b17c0b; }
+body.black-theme .cta-band :is(h2,p) { color:#eee8dd; }
+body.black-theme .site-footer { background:#050505; border-top:1px solid #282623; }
+body.black-theme .footer-social-link { background:#ffffff03; border-color:#302d27; }
+body.black-theme .page-hero { background:#050505; }
+body.black-theme .page-hero::before { opacity:.3; }
+body.black-theme .page-hero .page-hero-copy { max-width:min(75%,900px); }
+body.black-theme .page-hero :is(.section-label,.badge-chip) { color:#d7bd99; border-color:#4e4232; }
+body.black-theme .page-hero .page-hero-text { color:#b4b0a8; }
+body.black-theme .transition-curtain i { background:#121212; }
+body.black-theme .transition-curtain i:nth-child(2),body.black-theme .transition-curtain i:nth-child(4) { background:#25221e; }
+body.black-theme .transition-curtain i:nth-child(3) { background:#383127; }
+body.black-theme .pointer-trail i { background:#e8c28c; }
+
+/* A hanging Edison bulb: separate glass, filament, and slowly breathing glow. */
+.bulb-stage { position:relative; display:flex; justify-content:center; align-items:flex-start; min-height:580px; isolation:isolate; }
+.bulb-stage::before { content:""; position:absolute; top:-180px; height:200px; width:3px; background:#38352e; z-index:-1; }
+.vintage-bulb { display:block; width:380px; height:580px; max-width:100%; overflow:visible; }
+.bulb-aura { position:absolute; width:450px; height:450px; max-width:120%; top:145px; border-radius:50%; background:radial-gradient(ellipse,#d58a351c,transparent 68%); animation:tungsten-glow 7s ease-in-out infinite; pointer-events:none; z-index:-1; }
+.bulb-radiance,.bulb-filament { animation:tungsten-glow 7s ease-in-out infinite; }
+.bulb-caption { position:absolute; bottom:0; text-align:center; color:#c9baa4; font-size:.84rem; letter-spacing:.02em; margin:0; }
+.bulb-caption span { display:block; font-size:.6rem; letter-spacing:.23em; color:#85755e; margin-bottom:5px; }
+.page-bulb { position:absolute; right:4%; top:-90px; width:300px; height:460px; pointer-events:none; z-index:-1; }
+.page-bulb .vintage-bulb { width:300px; height:460px; }
+.motion-paused .bulb-radiance,.motion-paused .bulb-filament { opacity:.85; }
+@keyframes tungsten-glow { 0%,100% { opacity:1; } 38% { opacity:.25; } 67% { opacity:.85; } 82% { opacity:.55; } }
+@media(max-width:1100px) and (min-width:761px) {
+  body.black-theme .studio-grid { grid-template-columns:1.2fr .8fr; gap:20px; }
+  .bulb-stage { min-height:500px; }.vintage-bulb { height:500px; width:328px; }
+  body.black-theme .page-hero .page-hero-copy { max-width:75%; }
+  .page-bulb { right:-35px; opacity:.65; }
+}
+@media(max-width:760px) {
+  body.black-theme .studio-hero { padding-top:40px; }
+  .bulb-stage { min-height:440px; margin-top:-15px; }
+  .bulb-stage::before { display:none; }
+  .vintage-bulb { width:288px; height:440px; }
+  .bulb-aura { width:340px; height:340px; top:100px; }
+  .bulb-caption { bottom:0; }
+  body.black-theme .hero-bottom { margin-top:25px; }
+  body.black-theme .page-hero .page-hero-copy { max-width:100%; }
+  .page-bulb { top:-115px; right:-30px; width:190px; height:290px; opacity:.4; }
+  .page-bulb .vintage-bulb { width:190px; height:290px; }
+}
