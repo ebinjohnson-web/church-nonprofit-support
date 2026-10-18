@@ -154,8 +154,8 @@ function showEntry() {
   pageRegions.forEach(region => { region.inert = true; });
   entryScreen.inert = false;
   entryScreen.querySelector('[data-enter]')?.focus({ preventScroll:true });
-  introFadeTimer = setTimeout(() => document.body.classList.add('intro-finishing'), 4600);
-  introEndTimer = setTimeout(() => finishEntry('main-content'), 5100);
+  introFadeTimer = setTimeout(() => document.body.classList.add('intro-finishing'), 6600);
+  introEndTimer = setTimeout(() => finishEntry('main-content'), 7100);
 }
 function finishEntry(targetId) {
   clearIntroTimers();
@@ -163,7 +163,6 @@ function finishEntry(targetId) {
   pageRegions.forEach(region => { region.inert = false; });
   document.body.classList.remove('entry-active', 'entry-leaving', 'intro-finishing');
   document.body.classList.add('site-entered');
-  writeSession('intro-entered-v2', 'true');
   const target = document.getElementById(targetId) || document.getElementById('main-content');
   if (targetId === 'selected-work') {
     target.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
@@ -197,7 +196,8 @@ document.querySelector('.skip-link')?.addEventListener('click', event => {
   }
 });
 if (entryScreen) {
-  if (!captureMode && !location.hash && readSession('intro-entered-v2') !== 'true') showEntry();
+  const isRefresh = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+  if (!captureMode && (!location.hash || isRefresh)) showEntry();
   else entryScreen.inert = true;
 }
 if (readSession('page-transition') === 'true') {

@@ -79,6 +79,6 @@ For inquiries related to the website or services:
 
 ## Immersive entry experience
 
-The homepage opens on black with giant white text: Great Work, then Better Websites. After about five seconds it fades automatically into the homepage. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Hash links skip the intro. `?capture=1` skips the intro and pauses motion for screenshots.
+The homepage opens on black with giant white text: Great Work, then Better Websites, followed by the Ebin Johnson logo in white. After about seven seconds it fades automatically into the homepage. The sequence plays on every homepage visit and browser refresh, including refreshing a URL with an anchor. Skip intro opens the homepage immediately. The Intro button replays the sequence. Five-colour curtains connect internal pages. Direct hash links skip the intro when first opened. `?capture=1` skips the intro and pauses motion for screenshots.
 
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
