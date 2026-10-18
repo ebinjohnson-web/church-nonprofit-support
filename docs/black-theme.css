@@ -112,21 +112,24 @@ body.black-theme .pointer-trail i { background:#e8c28c; }
   .page-bulb .vintage-bulb { width:190px; height:290px; }
 }
 
-/* Real photography: animate the exposure and optical bloom of the source image. */
+/* Real photography: fixed glass and socket, with only the filament animated. */
 .bulb-stage::before { display:none; }
+.cinematic-intro:focus { outline:none; }
 .real-bulb-frame {
   width:400px; max-width:100%; aspect-ratio:5 / 7; position:relative; isolation:isolate;
-  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 40%,#000e 60%,transparent 100%);
-  mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 40%,#000e 60%,transparent 100%);
 }
-.bulb-photo,.bulb-photo-bloom { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% center; }
-.bulb-photo { animation:photo-exposure 6.4s ease-in-out infinite; }
-.bulb-photo-bloom { mix-blend-mode:screen; filter:blur(12px) brightness(1.8); animation:photo-bloom 6.4s ease-in-out infinite; pointer-events:none; }
-.real-bulb-frame .bulb-aura { inset:0 -25%; width:150%; max-width:none; height:100%; background:radial-gradient(ellipse at 50% 60%,#ffa13477,transparent 64%); animation:photo-bloom 6.4s ease-in-out infinite; }
-@keyframes photo-exposure { 0%,100% { filter:brightness(.1) saturate(.7); } 42%,58% { filter:brightness(1.5) saturate(1.15); } }
-@keyframes photo-bloom { 0%,100% { opacity:.02; } 42%,58% { opacity:.8; } }
-.motion-paused .bulb-photo,.capture-mode .bulb-photo { animation:none!important; filter:brightness(1) saturate(1); }
-.motion-paused .bulb-photo-bloom,.capture-mode .bulb-photo-bloom { animation:none!important; opacity:.3; }
+.bulb-photo,.bulb-photo-filament { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% center; }
+.bulb-photo {
+  filter:brightness(.35) contrast(1.25);
+  clip-path:polygon(46% 0,53% 0,53% 7%,62% 8%,66% 12%,66% 23%,64% 27%,63% 30%,67% 42%,72% 60%,73% 68%,71% 73%,65% 77%,58% 80%,50% 81%,43% 79%,37% 76%,32% 72%,30% 65%,32% 54%,36% 39%,39% 30%,36% 27%,35% 22%,34% 13%,38% 9%,46% 8%);
+}
+.bulb-photo-filament {
+  mix-blend-mode:screen; filter:contrast(1.5) saturate(.65);
+  clip-path:polygon(46% 39%,57% 39%,60% 46%,60% 54%,64% 62%,63% 72%,58% 77%,48% 77%,43% 72%,42% 64%,44% 54%,44% 46%);
+  animation:filament-intensity 6.4s ease-in-out infinite; pointer-events:none;
+}
+@keyframes filament-intensity { 0%,100% { opacity:.015; } 42%,58% { opacity:1; } }
+.motion-paused .bulb-photo-filament,.capture-mode .bulb-photo-filament { animation:none!important; opacity:.65; }
 .page-bulb .real-bulb-frame { width:300px; }
 body.black-theme .studio-title { font-size:clamp(3rem,5.9vw,6.5rem); }
 body.black-theme .studio-eyebrow { font-size:.68rem; }

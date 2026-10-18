@@ -153,7 +153,7 @@ function showEntry() {
   document.body.classList.remove('site-entered', 'entry-leaving');
   pageRegions.forEach(region => { region.inert = true; });
   entryScreen.inert = false;
-  entryScreen.querySelector('[data-enter]')?.focus({ preventScroll:true });
+  entryScreen.focus({ preventScroll:true });
   introFadeTimer = setTimeout(() => document.body.classList.add('intro-finishing'), 6600);
   introEndTimer = setTimeout(() => finishEntry('main-content'), 7100);
 }
