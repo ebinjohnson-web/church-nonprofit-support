@@ -105,20 +105,36 @@ body.black-theme .pointer-trail i { background:#e8c28c; }
 .cinematic-intro:focus { outline:none; }
 .real-bulb-frame {
   width:400px; max-width:100%; aspect-ratio:5 / 7; position:relative; isolation:isolate;
+  -webkit-mask:url("assets/images/bulb-contour.svg") center / 100% 100% no-repeat;
+  mask:url("assets/images/bulb-contour.svg") center / 100% 100% no-repeat;
 }
-.bulb-photo,.bulb-photo-filament { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% center; }
+.bulb-photo,.bulb-photo-dimmer,.bulb-photo-filament { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:22% center; }
 .bulb-photo {
   filter:brightness(.82) saturate(.8);
   -webkit-mask:url("assets/images/bulb-contour.svg") center / 100% 100% no-repeat;
   mask:url("assets/images/bulb-contour.svg") center / 100% 100% no-repeat;
 }
-.bulb-photo-filament {
-  mix-blend-mode:screen; filter:contrast(1.5) saturate(.65);
-  clip-path:ellipse(13% 21% at 51% 58%);
-  animation:filament-intensity 6.4s ease-in-out infinite; pointer-events:none;
+.bulb-photo-dimmer,.bulb-photo-filament {
+  /* Extract photographed highlights; screen blending hides the dark pixels.
+     A vertical fade excludes the socket without outlining the glass. */
+  -webkit-mask:linear-gradient(transparent 35%,#000 43%,#000 80%,transparent 84%);
+  mask:linear-gradient(transparent 35%,#000 43%,#000 80%,transparent 84%);
+  pointer-events:none;
 }
-@keyframes filament-intensity { 0%,100% { opacity:.015; } 42%,58% { opacity:1; } }
+.bulb-photo-dimmer {
+  filter:grayscale(1) brightness(.7) contrast(8) invert(1);
+  mix-blend-mode:multiply;
+  animation:filament-dim 6.4s ease-in-out infinite;
+}
+.bulb-photo-filament {
+  filter:grayscale(1) brightness(.7) contrast(8) sepia(.8);
+  mix-blend-mode:screen;
+  animation:filament-intensity 6.4s ease-in-out infinite;
+}
+@keyframes filament-intensity { 0%,100% { opacity:0; } 42%,58% { opacity:1; } }
+@keyframes filament-dim { 0%,100% { opacity:.45; } 42%,58% { opacity:0; } }
 .motion-paused .bulb-photo-filament,.capture-mode .bulb-photo-filament { animation:none!important; opacity:.65; }
+.motion-paused .bulb-photo-dimmer,.capture-mode .bulb-photo-dimmer { animation:none!important; opacity:.15; }
 .page-bulb .real-bulb-frame { width:300px; }
 body.black-theme .studio-title { font-size:clamp(3rem,5.9vw,6.5rem); }
 body.black-theme .studio-eyebrow { font-size:.68rem; }
