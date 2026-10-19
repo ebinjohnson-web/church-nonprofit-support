@@ -4,7 +4,7 @@ const siteNav = document.getElementById('siteNav');
 const captureMode = new URLSearchParams(location.search).get('capture') === '1';
 const motionButton = document.querySelector('.motion-toggle');
 let userPaused = false;
-try { userPaused = sessionStorage.getItem('motion-paused') === 'true'; } catch (_) {}
+// Header motion controls were removed; old stored pause state must not freeze the site.
 let revealObserver;
 const motionDisabled = () => userPaused || captureMode;
 
