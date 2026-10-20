@@ -215,3 +215,9 @@ body.black-theme.home-page .concept-link:hover { color:#fff; transform:none; }
   .home-page .footer-grid { gap:28px; }
   body.black-theme .motion-toggle { min-height:40px; }
 }
+
+/* Keep keyboard access visible only on focus, and clean full-page captures. */
+body.black-theme .skip-link:not(:focus-visible){top:-100px}
+body.black-theme.capture-mode .site-header{position:static;top:auto}
+body.black-theme.capture-mode main{padding-top:0}
+body.capture-mode :is(.skip-link,.scroll-progress){display:none!important}
