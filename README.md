@@ -87,4 +87,6 @@ The homepage opens on black with Great Work and Better Websites revealed letter 
 
 `docs/black-theme.css` is the final shared theme layer: black backgrounds, charcoal cards, warm-white text, and tungsten accents. Each page uses a real vintage bulb photograph by Brett Sayles, with a fixed photographic glass/socket layer and a separate filament-only exposure layer on a 6.4-second dim-to-bright cycle. No halo or optical bloom is added. Attribution and source are recorded in docs/assets/images/PHOTO-CREDIT.md. The existing Pause motion control also pauses the bulb.
 
-The homepage is intentionally concise: a short hero, two live projects, four concept previews, and a contact link. Detailed service and background information stays on the inner pages.
+The homepage is intentionally concise: a short hero, two live projects, five concept previews, and a contact link. Detailed service and background information stays on the inner pages.
+
+The Common Ground not-for-profit concept appears first in Website concepts. Its source is in https://github.com/ebinjohnson-web/common-ground-nonprofit-demo and its live demo is https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/. The portfolio preview is a locally hosted screenshot with photography attribution in docs/assets/images/PHOTO-CREDIT.md.

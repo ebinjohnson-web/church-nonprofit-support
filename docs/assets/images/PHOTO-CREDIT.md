@@ -16,3 +16,4 @@ The concept preview screenshots include photographs used under the [Pexels Licen
 - `concept-salon-photo.jpg`: cottonbro studio — https://www.pexels.com/photo/woman-getting-a-haircut-3992876/
 - `concept-sandwich-photo.jpg`: Tolga Aslantürk — https://www.pexels.com/photo/close-up-photo-of-a-sandwich-on-a-bread-11256671/
 - `concept-pulse-photo.jpg`: Antoni Shkraba — https://www.pexels.com/photo/portrait-of-a-graphic-artist-in-a-studio-with-posters-on-walls-6620994/
+- `concept-nonprofit.png`: Screenshot of the Common Ground nonprofit concept. Hero photography by RDNE Stock project — https://www.pexels.com/photo/food-love-people-street-6646864/. Full concept credits: https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/photo-credits.html
