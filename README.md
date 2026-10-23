@@ -32,9 +32,9 @@ GitHub Pages still serves the `docs/` folder directly.
 ## Colour and motion refresh
 
 - `docs/refresh.css` adds the shared cobalt, coral, lime, and cream theme.
-- The homepage uses existing project screenshots, floating artwork, pointer tilt, and scroll reveals.
-- Pause motion in the header to stop ambient animation. The choice lasts for the browser session and carries across pages.
-- Animation intentionally runs regardless of the system reduced-motion preference. Visitors can pause it manually. Content remains readable without JavaScript.
+- The current homepage overrides these early styles with `studio-motion.css`, using existing project screenshots, a project showreel, and scroll reveals.
+- The homepage's fixed pause control stops its ambient animation and remembers the choice for the browser session.
+- The homepage respects system reduced-motion preferences. Other pages retain their earlier motion treatment. Content remains readable without JavaScript.
 
 ## Pages
 
@@ -77,9 +77,11 @@ For inquiries related to the website or services:
 
 - `ebin@ebinjohnson.ca`
 
-## Immersive entry experience
+## Animated studio homepage
 
-The homepage opens on black with Great Work and Better Websites revealed letter by letter, followed by the Ebin Johnson logo in white. After about seven seconds it fades automatically into the homepage. The sequence plays on every homepage visit and browser refresh, including refreshing a URL with an anchor. The Intro button replays the sequence. Five-colour curtains connect internal pages. Direct hash links skip the intro when first opened. `?capture=1` skips the intro and pauses motion for screenshots.
+The homepage opens directly on a project-led hero. Oversized typography overlaps a rounded showcase that crossfades between MM Photographi, Common Ground, and Anchor Church every 6.5 seconds. Each slide links to its real destination; Common Ground is labelled as a concept. The slideshow pauses on hover, keyboard focus, page hiding, or the pause control. Inactive slide links are removed from keyboard and accessibility navigation.
+
+`docs/studio-motion.css` and `docs/studio-motion.js` contain the original homepage design: gradual image movement, a moving service ribbon, word reveals, staggered project galleries, and the bulb as a small personal signature. The warm black-and-gold palette, logo, project links, and other pages remain. The full-screen intro has been removed from the homepage, leaving one H1. A fixed pause/play control respects system reduced-motion preferences and remembers the visitor's choice during the session. `?capture=1` pauses motion for screenshots.
 
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
 
