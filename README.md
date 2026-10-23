@@ -43,6 +43,10 @@ GitHub Pages still serves the `docs/` folder directly.
 - `services.html` — Services page
 - `contact.html` — Contact page
 
+The inner pages share `studio-pages.css` and `studio-pages.js`: editorial layouts, white logo assets, animated bulb/collage details, native FAQ disclosure, and the same mobile motion preference as the homepage. About retains the supplied project-management background and shows current live-project previews. Services links carry a `service` query parameter to Contact. Contact builds a `mailto:` draft locally, validates the project message, and can copy the public email address; it has no submission endpoint and stores no inquiry fields. The homepage and inner pages share only the manual motion preference in session storage.
+
+`npm run check` checks the JavaScript and all four HTML documents for duplicate document sections or IDs, a single H1, active navigation, valid schema, and working local links and anchors.
+
 ## Assets
 
 - `styles.css` — Main stylesheet

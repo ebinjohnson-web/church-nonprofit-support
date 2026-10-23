@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node tools/preview.mjs",
-    "check": "node --check docs/script.js && node --check docs/studio-motion.js"
+    "check": "node --check docs/script.js && node --check docs/studio-motion.js && node --check docs/studio-pages.js && node tools/check-site.mjs"
   },
   "engines": { "node": ">=18" }
 }
