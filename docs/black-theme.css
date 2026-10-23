@@ -216,6 +216,28 @@ body.black-theme.home-page .concept-link:hover { color:#fff; transform:none; }
   body.black-theme .motion-toggle { min-height:40px; }
 }
 
+/* Give an unpaired final concept a complete row instead of leaving an empty cell. */
+@media(min-width:761px) {
+  .home-page .demo-grid>.demo-card:last-child:nth-child(odd) {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;
+  }
+  .home-page .demo-grid>.demo-card:last-child:nth-child(odd) .demo-card-media {
+    border-bottom:0;
+    border-right:1px solid var(--border);
+  }
+  .home-page .demo-grid>.demo-card:last-child:nth-child(odd) .demo-card-body {
+    align-self:center;
+    grid-template-rows:auto auto auto;
+    padding:clamp(26px,4vw,52px);
+  }
+  .home-page .demo-grid>.demo-card:last-child:nth-child(odd) h3 {
+    font-size:clamp(1.65rem,3.2vw,2.6rem);
+  }
+}
+
 /* Keep keyboard access visible only on focus, and clean full-page captures. */
 body.black-theme .skip-link:not(:focus-visible){top:-100px}
 body.black-theme.capture-mode .site-header{position:static;top:auto}
