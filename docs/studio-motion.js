@@ -7,13 +7,16 @@
   const pause = document.querySelector('.showcase-pause');
   const capture = new URLSearchParams(location.search).get('capture') === '1';
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
+  const mobileView = matchMedia('(max-width:760px)');
+  const hoverPointer = matchMedia('(hover:hover) and (pointer:fine)');
   let current = 0;
   let slidePaused = false;
   let timer;
   let scrollFrame;
   let storedPause = false;
   try { storedPause = sessionStorage.getItem('studio-motion-paused') === 'true'; } catch (_) {}
-  let globalPaused = capture || reduced.matches || storedPause;
+  const systemPausesMotion = () => reduced.matches && !mobileView.matches;
+  let globalPaused = capture || systemPausesMotion() || storedPause;
   const control = document.createElement('button');
   control.type = 'button';
   control.className = 'studio-motion-control';
@@ -33,7 +36,8 @@
   }
   function schedule() {
     clearInterval(timer);
-    if (!globalPaused && !slidePaused && !document.hidden && !showcase.matches(':hover') && !showcase.contains(document.activeElement)) {
+    const pointerPauses = hoverPointer.matches && (showcase.matches(':hover') || showcase.contains(document.activeElement));
+    if (!globalPaused && !slidePaused && !document.hidden && !pointerPauses) {
       timer = setInterval(() => showSlide((current + 1) % slides.length), 6500);
     }
   }
@@ -55,17 +59,23 @@
   }
   control.addEventListener('click', () => {
     globalPaused = !globalPaused;
+    storedPause = globalPaused;
     try { sessionStorage.setItem('studio-motion-paused', String(globalPaused)); } catch (_) {}
     sync();
   });
   pause.addEventListener('click', () => { slidePaused = !slidePaused; sync(); });
   dots.forEach(dot => dot.addEventListener('click', () => { showSlide(Number(dot.dataset.showcase)); schedule(); }));
-  showcase.addEventListener('mouseenter', () => clearInterval(timer));
+  showcase.addEventListener('mouseenter', () => { if (hoverPointer.matches) clearInterval(timer); });
   showcase.addEventListener('mouseleave', schedule);
-  showcase.addEventListener('focusin', () => clearInterval(timer));
+  showcase.addEventListener('focusin', () => { if (hoverPointer.matches) clearInterval(timer); });
   showcase.addEventListener('focusout', () => setTimeout(schedule, 0));
   document.addEventListener('visibilitychange', schedule);
-  reduced.addEventListener('change', event => { globalPaused = capture || event.matches; sync(); });
+  function syncSystemPreference() {
+    globalPaused = capture || storedPause || systemPausesMotion();
+    sync();
+  }
+  reduced.addEventListener('change', syncSystemPreference);
+  mobileView.addEventListener('change', syncSystemPreference);
 
   function scrollMotion() {
     scrollFrame = null;

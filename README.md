@@ -34,7 +34,7 @@ GitHub Pages still serves the `docs/` folder directly.
 - `docs/refresh.css` adds the shared cobalt, coral, lime, and cream theme.
 - The current homepage overrides these early styles with `studio-motion.css`, using existing project screenshots, a project showreel, and scroll reveals.
 - The homepage's fixed pause control stops its ambient animation and remembers the choice for the browser session.
-- The homepage respects system reduced-motion preferences. Other pages retain their earlier motion treatment. Content remains readable without JavaScript.
+- On desktop, the homepage respects system reduced-motion preferences. At mobile widths (760px and below), the slideshow and ambient animation run regardless of the system preference, as requested. The manual pause control works at every width. Other pages retain their earlier motion treatment. Content remains readable without JavaScript.
 
 ## Pages
 
@@ -79,9 +79,9 @@ For inquiries related to the website or services:
 
 ## Animated studio homepage
 
-The homepage opens directly on a project-led hero. Oversized typography overlaps a rounded showcase that crossfades between MM Photographi, Common Ground, and Anchor Church every 6.5 seconds. Each slide links to its real destination; Common Ground is labelled as a concept. The slideshow pauses on hover, keyboard focus, page hiding, or the pause control. Inactive slide links are removed from keyboard and accessibility navigation.
+The homepage opens directly on a project-led hero. Oversized typography overlaps a rounded showcase that crossfades between MM Photographi, Common Ground, and Anchor Church every 6.5 seconds. Each slide links to its real destination; Common Ground is labelled as a concept. The slideshow pauses on desktop hover/focus, page hiding, or the pause control. Touch interactions do not leave the slideshow stuck in a hover/focus pause. Inactive slide links are removed from keyboard and accessibility navigation.
 
-`docs/studio-motion.css` and `docs/studio-motion.js` contain the original homepage design: gradual image movement, a moving service ribbon, word reveals, staggered project galleries, and the bulb as a small personal signature. The warm black-and-gold palette, logo, project links, and other pages remain. The full-screen intro has been removed from the homepage, leaving one H1. A fixed pause/play control respects system reduced-motion preferences and remembers the visitor's choice during the session. `?capture=1` pauses motion for screenshots.
+`docs/studio-motion.css` and `docs/studio-motion.js` contain the original homepage design: gradual image movement, a moving service ribbon, word reveals, staggered project galleries, and the bulb as a small personal signature. The warm black-and-gold palette, logo, project links, and other pages remain. The full-screen intro has been removed from the homepage, leaving one H1. A fixed pause/play control remembers the visitor's manual choice during the session. Desktop honors system reduced motion; mobile animation runs regardless of the system setting. `?capture=1` pauses motion for screenshots.
 
 The homepage uses `EJwhitelogo.png`, a white export of the existing transparent logo, so its contrast does not depend on CSS filters. Arrows request text presentation; the large contact-panel arrow is an SVG background. The mobile showcase has an explicit height and a matching photograph background as a rendering fallback. The bulb badge is anchored inside the showcase, and project cards size to their content.
 
