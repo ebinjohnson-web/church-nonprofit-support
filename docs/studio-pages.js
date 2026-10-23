@@ -51,24 +51,4 @@
     try { await navigator.clipboard.writeText('ebin@ebinjohnson.ca'); status.textContent = 'Email address copied.'; }
     catch (_) { status.textContent = 'Email: ebin@ebinjohnson.ca'; }
   });
-  const form = document.getElementById('inquiry-form');
-  if (!form) return;
-  const draft = document.getElementById('email-draft');
-  const select = document.getElementById('inquiry-service');
-  const subjects = {general:'Website Inquiry',website:'Website Design or Refresh Inquiry','website-support':'Website & Content Support Inquiry','digital-support':'Digital Operations Support Inquiry'};
-  const requested = new URLSearchParams(location.search).get('service');
-  if (Object.hasOwn(subjects, requested)) select.value = requested;
-  function updateDraft() {
-    const fields = new FormData(form);
-    const lines = ['Hi Ebin,', ''];
-    if (fields.get('name')?.trim()) lines.push(`Name: ${fields.get('name').trim()}`);
-    if (fields.get('organization')?.trim()) lines.push(`Organization: ${fields.get('organization').trim()}`);
-    lines.push(`Interested in: ${select.options[select.selectedIndex].text}`, '', fields.get('message').trim());
-    draft.href = `mailto:ebin@ebinjohnson.ca?subject=${encodeURIComponent(subjects[select.value])}&body=${encodeURIComponent(lines.join('\n'))}`;
-  }
-  form.addEventListener('input', updateDraft);
-  form.addEventListener('change', updateDraft);
-  form.addEventListener('submit', event => { event.preventDefault(); if (form.reportValidity()) draft.click(); });
-  draft.addEventListener('click', event => { if (!form.reportValidity()) event.preventDefault(); });
-  updateDraft();
 })();
