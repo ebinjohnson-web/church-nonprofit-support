@@ -130,12 +130,14 @@ body.studio-inner-page .contact-guide h3{color:#171914;font-size:clamp(35px,3.5v
 .studio-inner-page .site-footer{background:var(--inner-bg);border-color:#ffffff15;padding-top:65px}
 .studio-inner-page .footer-grid{gap:40px}
 .inner-motion-control{position:fixed;bottom:18px;right:18px;z-index:50;background:#1c1d1b;color:#d8d4ca;border:1px solid #ffffff25;border-radius:40px;padding:10px 15px;font:500 10px Manrope,sans-serif;cursor:pointer;box-shadow:0 4px 15px #0003}
-.inner-motion-ready .inner-reveal{opacity:0;transform:translateY(32px);transition:opacity .8s,transform 1s cubic-bezier(.16,1,.3,1);transition-delay:var(--inner-delay,0ms)}
-.inner-motion-ready .inner-reveal.is-visible{opacity:1;transform:none}
-.studio-inner-page.motion-paused .inner-reveal,.studio-inner-page.capture-mode .inner-reveal{opacity:1;transform:none;transition:none}
+/* Content stays readable before scrolling, if observation fails, and in full-page captures. */
+.inner-motion-ready .inner-reveal{opacity:1;transform:none}
+.inner-motion-ready .inner-reveal.is-visible{animation:inner-section-in .85s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--inner-delay,0ms)}
+.studio-inner-page.motion-paused .inner-reveal,.studio-inner-page.capture-mode .inner-reveal{opacity:1;transform:none;animation:none;transition:none}
 .studio-inner-page.motion-paused .inner-hero h1>*{animation:none!important;opacity:1;transform:none}
 .studio-inner-page.motion-paused :is(.spark-visual .real-bulb-frame,.service-collage figure){transform:none}
 @keyframes inner-type-in{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@keyframes inner-section-in{from{transform:translateY(18px)}to{transform:none}}
 @keyframes inner-orbit{to{transform:rotate(360deg)}}
 @keyframes inner-bulb-float{50%{transform:translateY(-14px)}}
 @keyframes inner-ribbon-travel{to{transform:translateX(-50%)}}
