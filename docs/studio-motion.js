@@ -43,10 +43,10 @@
     // Share the existing transition/reveal pause state without altering other pages.
     userPaused = globalPaused;
     syncMotion();
-    control.textContent = globalPaused ? '▶ Play motion' : 'Ⅱ Pause motion';
+    control.textContent = globalPaused ? '▶\uFE0E Play motion' : 'Ⅱ Pause motion';
     control.setAttribute('aria-label', globalPaused ? 'Play website motion' : 'Pause website motion');
     control.setAttribute('aria-pressed', String(globalPaused));
-    pause.textContent = slidePaused || globalPaused ? '▶' : 'Ⅱ';
+    pause.textContent = slidePaused || globalPaused ? '▶\uFE0E' : 'Ⅱ';
     pause.setAttribute('aria-label', slidePaused ? 'Play project slideshow' : 'Pause project slideshow');
     pause.setAttribute('aria-pressed', String(slidePaused || globalPaused));
     pause.disabled = globalPaused;

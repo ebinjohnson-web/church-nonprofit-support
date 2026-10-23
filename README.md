@@ -83,6 +83,8 @@ The homepage opens directly on a project-led hero. Oversized typography overlaps
 
 `docs/studio-motion.css` and `docs/studio-motion.js` contain the original homepage design: gradual image movement, a moving service ribbon, word reveals, staggered project galleries, and the bulb as a small personal signature. The warm black-and-gold palette, logo, project links, and other pages remain. The full-screen intro has been removed from the homepage, leaving one H1. A fixed pause/play control respects system reduced-motion preferences and remembers the visitor's choice during the session. `?capture=1` pauses motion for screenshots.
 
+The homepage uses `EJwhitelogo.png`, a white export of the existing transparent logo, so its contrast does not depend on CSS filters. Arrows request text presentation; the large contact-panel arrow is an SVG background. The mobile showcase has an explicit height and a matching photograph background as a rendering fallback. The bulb badge is anchored inside the showcase, and project cards size to their content.
+
 `docs/experience.css` contains the entry scene, expanded palette, animated typography, curtain transitions, orbiting artwork, and moving strips. No animation library or external runtime dependency is needed.
 
 ## Black theme and vintage lighting
