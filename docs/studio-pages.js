@@ -5,30 +5,15 @@
   const capture = new URLSearchParams(location.search).get('capture') === '1';
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
   const mobile = matchMedia('(max-width:760px)');
-  let manualPause = false;
-  try { manualPause = sessionStorage.getItem('studio-motion-paused') === 'true'; } catch (_) {}
-  let paused = capture || manualPause || (reduced.matches && !mobile.matches);
-  const control = document.createElement('button');
-  control.type = 'button';
-  control.className = 'inner-motion-control';
-  page.append(control);
+  let paused = capture || (reduced.matches && !mobile.matches);
   const reveals = [...document.querySelectorAll('.inner-reveal')];
   function sync() {
     userPaused = paused;
     syncMotion();
     page.classList.toggle('inner-motion-opt-in', !paused);
-    control.textContent = paused ? '▶\uFE0E Play motion' : 'Ⅱ Pause motion';
-    control.setAttribute('aria-label', paused ? 'Play website motion' : 'Pause website motion');
-    control.setAttribute('aria-pressed', String(paused));
     if (paused) reveals.forEach(element => element.classList.add('is-visible'));
   }
-  control.addEventListener('click', () => {
-    paused = !paused;
-    manualPause = paused;
-    try { sessionStorage.setItem('studio-motion-paused', String(paused)); } catch (_) {}
-    sync();
-  });
-  function syncPreference() { paused = capture || manualPause || (reduced.matches && !mobile.matches); sync(); }
+  function syncPreference() { paused = capture || (reduced.matches && !mobile.matches); sync(); }
   reduced.addEventListener('change', syncPreference);
   mobile.addEventListener('change', syncPreference);
   if ('IntersectionObserver' in window) {

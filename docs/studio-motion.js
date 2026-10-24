@@ -13,15 +13,8 @@
   let slidePaused = false;
   let timer;
   let scrollFrame;
-  let storedPause = false;
-  try { storedPause = sessionStorage.getItem('studio-motion-paused') === 'true'; } catch (_) {}
   const systemPausesMotion = () => reduced.matches && !mobileView.matches;
-  let globalPaused = capture || systemPausesMotion() || storedPause;
-  const control = document.createElement('button');
-  control.type = 'button';
-  control.className = 'studio-motion-control';
-  control.setAttribute('aria-pressed', String(globalPaused));
-  document.body.append(control);
+  let globalPaused = capture || systemPausesMotion();
 
   function showSlide(index) {
     current = index;
@@ -47,9 +40,6 @@
     // Share the existing transition/reveal pause state without altering other pages.
     userPaused = globalPaused;
     syncMotion();
-    control.textContent = globalPaused ? '▶\uFE0E Play motion' : 'Ⅱ Pause motion';
-    control.setAttribute('aria-label', globalPaused ? 'Play website motion' : 'Pause website motion');
-    control.setAttribute('aria-pressed', String(globalPaused));
     pause.textContent = slidePaused || globalPaused ? '▶\uFE0E' : 'Ⅱ';
     pause.setAttribute('aria-label', slidePaused ? 'Play project slideshow' : 'Pause project slideshow');
     pause.setAttribute('aria-pressed', String(slidePaused || globalPaused));
@@ -57,12 +47,6 @@
     showcase.style.setProperty('--showcase-scroll', '0px');
     schedule();
   }
-  control.addEventListener('click', () => {
-    globalPaused = !globalPaused;
-    storedPause = globalPaused;
-    try { sessionStorage.setItem('studio-motion-paused', String(globalPaused)); } catch (_) {}
-    sync();
-  });
   pause.addEventListener('click', () => { slidePaused = !slidePaused; sync(); });
   dots.forEach(dot => dot.addEventListener('click', () => { showSlide(Number(dot.dataset.showcase)); schedule(); }));
   showcase.addEventListener('mouseenter', () => { if (hoverPointer.matches) clearInterval(timer); });
@@ -71,7 +55,7 @@
   showcase.addEventListener('focusout', () => setTimeout(schedule, 0));
   document.addEventListener('visibilitychange', schedule);
   function syncSystemPreference() {
-    globalPaused = capture || storedPause || systemPausesMotion();
+    globalPaused = capture || systemPausesMotion();
     sync();
   }
   reduced.addEventListener('change', syncSystemPreference);
