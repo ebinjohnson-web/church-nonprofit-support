@@ -31,7 +31,8 @@ body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-so
 body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-social-handle{font-size:.875rem}
 body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-bottom p{font-size:.875rem}
 /* The gold information panel needs dark text rather than the shared muted colour. */
-body.black-theme.studio-inner-page .contact-guide :is(li,p,.inner-link){color:#292c23}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .contact-guide{--reading-muted:#292c23}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .contact-guide :is(h3,p,li,a,span,.inner-kicker,.inner-link){color:#292c23}
 @media(min-width:761px) and (max-width:1100px){
   body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .site-nav{gap:16px}
   body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .header-cta{padding-inline:16px}
