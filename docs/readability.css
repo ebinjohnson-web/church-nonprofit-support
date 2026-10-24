@@ -1,0 +1,52 @@
+/* Shared reading scale; large display headings keep their existing sizes. */
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page){--reading-size:1.0625rem;--reading-muted:#cecac1}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(
+  .studio-intro,.studio-introduction p:not(.section-label),.live-work-copy p:not(.section-label),
+  .inner-lead,.inner-prose p,.inner-principles p,.inner-process p,
+  .inner-projects article>p:not(.inner-kicker),.service-description>p,.service-description li,
+  .inner-faq p,.contact-intro,.contact-guide li,.contact-guide-footer p:not(.inner-kicker),.inquiry-status
+){font-size:var(--reading-size);line-height:1.75;color:var(--reading-muted)}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(
+  .site-nav a,.header-cta,.studio-actions .btn-primary,.hero-contact,.studio-inline-link,
+  .live-work-copy>a,.concept-link,.inner-link,.inner-button,.cta-band-inner .btn-primary
+){font-size:1rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(
+  .studio-eyebrow,.section-label,.demo-tag,.live-work-copy .section-label,.inner-kicker,
+  .inner-projects .inner-kicker,.service-name .inner-kicker,.inner-number,.hero-bottom-note,
+  .spark-note,.collage-note,.inner-note,.inquiry-form label span,#copy-status
+){font-size:.875rem;line-height:1.65}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(
+  .section-label,.demo-tag,.inner-kicker,.inner-note,.spark-note,.collage-note,.hero-bottom-note
+){color:#c2beb4}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(.studio-marquee-track>span,.inner-ribbon span){font-size:.875rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .showcase-slide-label{font-size:1rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .showcase-slide-label>span{font-size:.875rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .hero-signature>span:last-child{font-size:.8125rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .hero-signature strong{font-size:.875rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(.inquiry-form label,#copy-email){font-size:.9375rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .inquiry-form :is(input,select,textarea){font-size:1rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .site-footer :is(p,a,li,h4){font-size:.9375rem;line-height:1.8}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .site-footer :is(p,li){color:#c2beb4}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-social-label{font-size:.8125rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-social-handle{font-size:.875rem}
+body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .footer-bottom p{font-size:.875rem}
+/* The gold information panel needs dark text rather than the shared muted colour. */
+body.black-theme.studio-inner-page .contact-guide :is(li,p,.inner-link){color:#292c23}
+@media(min-width:761px) and (max-width:1100px){
+  body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .site-nav{gap:16px}
+  body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .header-cta{padding-inline:16px}
+  body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) .header-cta::after{margin-left:10px}
+}
+@media(max-width:760px){
+  body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page){--reading-size:1rem}
+  body.black-theme:is(.home-page.studio-motion-page,.studio-inner-page) :is(.inner-link,.inner-button,.hero-contact,.studio-inline-link,.studio-actions .btn-primary){font-size:.9375rem}
+  body.black-theme.home-page.studio-motion-page .studio-actions{gap:16px;flex-wrap:wrap}
+  body.black-theme.home-page.studio-motion-page .showcase-slide-label{font-size:.875rem;align-items:end}
+  body.black-theme.home-page.studio-motion-page .showcase-slide-label>span{font-size:.8125rem;max-width:110px}
+  body.black-theme.home-page.studio-motion-page .hero-signature{max-width:190px;bottom:64px;right:8px}
+  body.black-theme.home-page.studio-motion-page .hero-signature>span:last-child{font-size:.75rem}
+  body.black-theme.home-page.studio-motion-page .hero-signature strong{font-size:.8125rem}
+  body.black-theme.home-page.studio-motion-page .hero-bottom-note{gap:12px;align-items:start}
+  body.black-theme.home-page.studio-motion-page .hero-bottom-note>a{max-width:105px;text-align:right}
+  body.black-theme.studio-inner-page .service-row{grid-template-columns:28px minmax(0,1fr);gap:10px}
+}
