@@ -35,7 +35,7 @@
   document.querySelector('.skip-link')?.addEventListener('click',finish);
   intro.addEventListener('animationend',event=>{if(event.target === intro && event.animationName === 'launch-curtain-out') finish();});
   // If a capture tool or stylesheet suppresses animation events, release the page anyway.
-  fallback = setTimeout(finish,4800);
+  fallback = setTimeout(finish,5600);
   root.classList.add('launch-running');
   skip.focus({preventScroll:true});
   reduced.addEventListener('change',onPreference);
