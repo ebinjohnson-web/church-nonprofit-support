@@ -37,7 +37,7 @@
   // If a capture tool or stylesheet suppresses animation events, release the page anyway.
   fallback = setTimeout(finish,5600);
   root.classList.add('launch-running');
-  skip.focus({preventScroll:true});
+  (mobile.matches ? intro : skip).focus({preventScroll:true});
   reduced.addEventListener('change',onPreference);
   mobile.addEventListener('change',onPreference);
   window.addEventListener('pageshow',event=>{if(event.persisted) finish();});
