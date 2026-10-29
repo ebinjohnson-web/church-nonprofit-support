@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node tools/preview.mjs",
-    "check": "node --check docs/script.js && node --check docs/studio-motion.js && node --check docs/studio-pages.js && node --check docs/contact-form.js && node tools/check-site.mjs && node tools/check-contact.mjs"
+    "check": "node --check docs/script.js && node --check docs/studio-motion.js && node --check docs/studio-pages.js && node --check docs/contact-form.js && node --check docs/launch-intro.js && node tools/check-site.mjs && node tools/check-contact.mjs"
   },
   "engines": { "node": ">=18" }
 }
