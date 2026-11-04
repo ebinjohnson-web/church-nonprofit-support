@@ -84,3 +84,17 @@ body.black-theme.cinema-home.capture-mode main{padding-top:0}
 @media(min-width:761px){.film-hero{min-height:620px}}
 
 .film-topline{justify-content:flex-end}.film-tools{justify-content:flex-end}
+/* Give the mobile hero its own readable display scale and composition. */
+@media(max-width:760px){
+  .film-hero{justify-content:center}
+  .film-topline{display:none}
+  .film-title{margin-top:0;padding:36px 0 28px}
+  body.black-theme.cinema-home .film-title .eyebrow{font-size:12px!important;line-height:1.6;letter-spacing:.09em;max-width:290px;margin-bottom:24px!important}
+  body.black-theme.cinema-home .film-title h1{font-size:clamp(52px,16vw,88px);line-height:1.01;letter-spacing:-.065em}
+  .film-title h1 em{white-space:normal}
+  .film-bottom{gap:24px 18px}
+  body.black-theme.cinema-home .film-bottom p{font-size:16px!important;line-height:1.65!important;max-width:none}
+  .film-bottom p br{display:none}
+  .round-link{width:104px;height:104px;font-size:14px;flex-shrink:0}
+  .film-tools{font-size:12px;margin-top:8px}
+}
