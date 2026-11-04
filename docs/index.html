@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="refresh.css?v=2" />
   <link rel="stylesheet" href="experience.css?v=6" />
   <link rel="stylesheet" href="black-theme.css?v=9" />
-  <link rel="stylesheet" href="studio-motion.css?v=4" />
+  <link rel="stylesheet" href="cinema-home.css?v=1" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,7 +82,7 @@
     }
   </script>
 </head>
-<body class="black-theme home-page studio-motion-page">
+<body class="black-theme home-page studio-motion-page cinema-home">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <section id="launch-intro" class="launch-intro" role="dialog" aria-modal="true" aria-label="Welcome to Ebin Johnson" aria-hidden="true" tabindex="-1" inert>
     <div class="launch-art" aria-hidden="true">
@@ -114,181 +114,44 @@
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <a href="mailto:ebin@ebinjohnson.ca?subject=Support%20Inquiry" class="btn btn-nav header-cta">
+        <a href="contact.html" class="btn btn-nav header-cta">
           Start a project
         </a>
       </div>
     </div>
   </header>
   <main id="main-content">
-    <section class="studio-hero" aria-labelledby="studio-heading">
-      <div class="container motion-hero">
-        <div class="studio-copy motion-hero-copy">
-          <p class="studio-eyebrow">Independent design. Personal support.</p>
-          <h1 class="studio-title" id="studio-heading"><span class="hero-title-line">Great work.</span><span class="hero-title-line"><em>Better websites.</em></span></h1>
-          <div class="hero-copy-bottom"><p class="studio-intro">Websites for churches, nonprofits<br class="desktop-break"> &amp; businesses with something to say.</p><div class="studio-actions"><a href="#selected-work" class="btn btn-primary">Explore my work <span aria-hidden="true">↗︎</span></a><a href="contact.html" class="hero-contact">Let’s talk <span aria-hidden="true">↗︎</span></a></div></div>
-        </div>
-        <div class="hero-showcase" role="region" aria-label="Featured website showcase">
-          <div class="showcase-slides">
-            <a class="showcase-slide is-current" href="https://mmphotographi.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit MM Photographi website"><img src="assets/images/mmphotographi-refresh.jpg" alt="MM Photographi wedding photography website — Hold on to the feeling" fetchpriority="high" width="1410" height="881"><span class="showcase-slide-label">MM Photographi <span>Live website ↗︎</span></span></a>
-            <a class="showcase-slide" href="https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/" target="_blank" rel="noopener noreferrer" aria-label="Explore Common Ground nonprofit concept" aria-hidden="true" tabindex="-1" inert><img src="assets/images/concept-nonprofit.png" alt="Common Ground nonprofit concept — Good grows when we show up" width="1239" height="873"><span class="showcase-slide-label">Common Ground <span>Nonprofit concept ↗︎</span></span></a>
-            <a class="showcase-slide" href="https://anchorchurchlondonca.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Anchor Church London website" aria-hidden="true" tabindex="-1" inert><img src="assets/images/anchor-church-preview.jpg" alt="Anchor Church London website — Anchored in Jesus" width="1265" height="712"><span class="showcase-slide-label">Anchor Church London <span>Live website ↗︎</span></span></a>
-          </div>
-          <div class="showcase-controls" aria-label="Project slideshow controls"><button class="showcase-pause" aria-label="Pause project slideshow" aria-pressed="false">Ⅱ</button></div>
-        <a class="hero-signature" href="about.html"><span class="signature-bulb" aria-hidden="true"><span class="real-bulb-frame"><img src="assets/images/vintage-bulb-photo.jpg" class="bulb-photo" alt="" width="1125" height="750"></span></span><span>A little spark.<br><strong>Meet Ebin Johnson ↗︎</strong></span></a>
-        </div>
-        <div class="hero-bottom-note"><span>Sarnia, Ontario · Working with good people.</span><a href="#selected-work">Scroll to explore <span aria-hidden="true">↓︎</span></a></div>
+    <section class="film-hero" aria-labelledby="studio-heading">
+      <div class="film-backdrop" aria-hidden="true"><video id="hero-film" autoplay muted loop playsinline preload="metadata" poster="assets/media/sketch-poster.jpg"><source src="assets/media/sketch-film.mp4" type="video/mp4"></video></div>
+      <div class="film-topline"><span><i></i> Independent design. Personal support.</span><span>Sarnia, Ontario / Working everywhere</span></div>
+      <div class="film-title"><p class="eyebrow">For people doing something that matters</p><h1 id="studio-heading">Great work.<br><em>Better websites.</em></h1></div>
+      <div class="film-bottom"><p>Websites for churches, nonprofits<br>and businesses with something to say.</p><a class="round-link" href="#selected-work"><span>Explore<br>the work</span><b aria-hidden="true">↘</b></a><div class="film-tools"><button id="film-toggle" type="button" aria-label="Pause background video">Pause film <span aria-hidden="true">Ⅱ</span></button><a href="#made-for">Scroll to discover ↓</a></div></div>
+    </section>
+    <section class="purpose-section" id="made-for">
+      <div class="editorial-heading"><p class="eyebrow">01 / A little more human</p><div><h2>Your work matters.<br>Let’s make people <em>feel it.</em></h2><p>A clear story. A memorable first impression. A website that feels like you. I bring design and practical digital support together to help your next chapter take shape.</p></div></div>
+      <div class="world-grid">
+        <a class="world-image" href="services.html"><img src="assets/media/church.webp" alt="Sunlight falling across the pews of a church" width="933" height="1400" loading="lazy"><span class="world-top">A place to belong <b>↗</b></span><span class="world-title">Churches<span>Welcome people before they walk through the door.</span></span></a>
+        <a class="world-image" href="services.html"><img src="assets/media/community.webp" alt="Volunteers working together to distribute food and supplies" width="1400" height="933" loading="lazy"><span class="world-top">A reason to care <b>↗</b></span><span class="world-title">Nonprofits<span>Turn a meaningful mission into a clear invitation.</span></span></a>
+        <a class="world-image" href="services.html"><img src="assets/media/business.webp" alt="A warm independent coffee shop filled with character" width="1400" height="933" loading="lazy"><span class="world-top">Something of your own <b>↗</b></span><span class="world-title">Businesses<span>Bring the character of your business online.</span></span></a>
       </div>
     </section>
-    <div class="studio-marquee" aria-hidden="true"><div class="studio-marquee-track"><span>GOOD PEOPLE. GREAT WORK. BETTER WEBSITES. <i>↗︎</i> CHURCHES. NONPROFITS. BUSINESSES. <i>✳︎</i></span><span>GOOD PEOPLE. GREAT WORK. BETTER WEBSITES. <i>↗︎</i> CHURCHES. NONPROFITS. BUSINESSES. <i>✳︎</i></span></div></div>
-    <section class="studio-introduction"><div class="container studio-introduction-grid"><p class="section-label">A website that feels like you.</p><div><h2>You do good work.<br>Let’s give it <em>a great home.</em></h2><p>I’m Ebin, a web designer in Sarnia. I bring design, clear communication, and practical digital support together for churches, nonprofits, and businesses.</p><a class="studio-inline-link" href="about.html">A little more about me <span aria-hidden="true">↗︎</span></a></div></div></section>
-    <section class="section section-compact" id="selected-work"><div class="container"><div class="section-header"><p class="section-label">Selected work</p><h2>Selected websites.</h2></div><div class="live-work-grid">
-      <article class="demo-card live-work-card"><a class="live-work-image" href="https://anchorchurchlondonca.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Anchor Church London"><img src="assets/images/anchor-church-preview.jpg" alt="Anchor Church London homepage" loading="lazy" width="1265" height="712"></a><div class="live-work-copy"><p class="section-label">Live website · Church</p><h3>Anchor Church London</h3><p>A welcoming home for a London church.</p><a href="https://anchorchurchlondonca.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit live website">Visit website <span aria-hidden="true">↗︎</span></a></div></article>
-      <article class="demo-card live-work-card"><a class="live-work-image" href="https://mmphotographi.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit MM Photographi"><img src="assets/images/mmphotographi-refresh.jpg" alt="Updated Magic Moments Photography website with its wedding photograph and Hold on to the feeling headline" loading="lazy" width="1410" height="881"></a><div class="live-work-copy"><p class="section-label">Live website · Photography</p><h3>MM Photographi</h3><p>Photography and film, front and centre.</p><a href="https://mmphotographi.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit live website">Visit website <span aria-hidden="true">↗︎</span></a></div></article>
-    </div></div></section>
-    <section class="section alt-bg section-compact" id="demo-portfolio">
-      <div class="container">
-        <div class="section-header center">
-          <p class="section-label">Design explorations</p>
-          <h2>Website concepts.</h2>
-        </div>
-        <div class="demo-grid">
-          <article class="demo-card">
-            <a class="demo-card-media image-shell" href="https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/" target="_blank" rel="noopener noreferrer" aria-label="Explore Common Ground nonprofit concept">
-              <img src="assets/images/concept-nonprofit.png" alt="Common Ground nonprofit website concept with volunteer photography and the headline Good grows when we show up" class="demo-card-image" loading="lazy" width="1239" height="873" />
-            </a>
-            <div class="demo-card-body">
-              <div class="demo-meta-row"><span class="demo-tag">Not for profit</span></div>
-              <h3>Common Ground</h3>
-              <div class="demo-actions">
-                <a href="https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/" class="btn concept-link" aria-label="Explore Common Ground nonprofit concept" target="_blank" rel="noopener noreferrer">Explore concept <span aria-hidden="true">↗︎</span></a>
-              </div>
-            </div>
-          </article>
-          <article class="demo-card demo-card-featured">
-            <div class="demo-card-media image-shell">
-              <img
-                src="assets/images/concept-church-photo.jpg"
-                alt="Grace Harbour Church — photography-led concept website"
-                class="demo-card-image"
-                loading="lazy" width="1425" height="900"
-              />
-              <div class="media-fallback" aria-hidden="true">
-                <span class="media-fallback-label">Church demo</span>
-                <strong>Grace Harbour Church Demo</strong>
-                <p>Modern church website concept with a calm, welcoming structure.</p>
-              </div>
-            </div>
-            <div class="demo-card-body">
-              <div class="demo-meta-row">
-                <span class="demo-tag">Church</span>
-              </div>
-              <h3>Grace Harbour Church</h3>
-              <div class="demo-actions">
-                <a
-                  href="https://ebinjohnson-web.github.io/church-website-demo/"
-                  class="btn concept-link" aria-label="Explore Grace Harbour Church concept"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore concept <span aria-hidden="true">↗︎</span></a>
-              </div>
-            </div>
-          </article>
-          <article class="demo-card">
-            <div class="demo-card-media image-shell">
-              <img
-                src="assets/images/concept-sandwich-photo.jpg"
-                alt="Brick and Board Sandwich Co. — photography-led concept website"
-                class="demo-card-image"
-                loading="lazy" width="1425" height="900"
-              />
-              <div class="media-fallback" aria-hidden="true">
-                <span class="media-fallback-label">Food service demo</span>
-                <strong>Brick &amp; Board Sandwich Co.</strong>
-                <p>Warm local sandwich shop concept focused on menu and catering flow.</p>
-              </div>
-            </div>
-            <div class="demo-card-body">
-              <div class="demo-meta-row">
-                <span class="demo-tag">Food &amp; hospitality</span>
-              </div>
-              <h3>Brick &amp; Board Sandwich Co.</h3>
-              <div class="demo-actions">
-                <a
-                  href="https://ebinjohnson-web.github.io/sandwich-shop-demo/"
-                  class="btn concept-link" aria-label="Explore Brick &amp; Board Sandwich Co. concept"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore concept <span aria-hidden="true">↗︎</span></a>
-              </div>
-            </div>
-          </article>
-          <article class="demo-card">
-            <div class="demo-card-media image-shell">
-              <img
-                src="assets/images/concept-salon-photo.jpg"
-                alt="Ritik Hair Salon — photography-led concept website"
-                class="demo-card-image"
-                loading="lazy" width="1425" height="900"
-              />
-              <div class="media-fallback" aria-hidden="true">
-                <span class="media-fallback-label">Salon demo</span>
-                <strong>Ritik Hair Salon Demo</strong>
-                <p>Editorial-style salon concept with strong visual presentation.</p>
-              </div>
-            </div>
-            <div class="demo-card-body">
-              <div class="demo-meta-row">
-                <span class="demo-tag">Salon</span>
-              </div>
-              <h3>Ritik Hair Salon</h3>
-              <div class="demo-actions">
-                <a
-                  href="https://ebinjohnson-web.github.io/ritik-hair-salon-demo/"
-                  class="btn concept-link" aria-label="Explore Ritik Hair Salon concept"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore concept <span aria-hidden="true">↗︎</span></a>
-              </div>
-            </div>
-          </article>
-          <article class="demo-card demo-card-static-pulse">
-            <div class="demo-card-media image-shell">
-              <img
-                src="assets/images/concept-pulse-photo.jpg"
-                alt="Static Pulse — photography-led concept website"
-                class="demo-card-image"
-                loading="lazy" width="1425" height="900"
-              />
-              <div class="media-fallback" aria-hidden="true">
-                <span class="media-fallback-label">Visual design</span>
-                <strong>Static Pulse / Brand Gallery Demo</strong>
-                <p>Bold visual agency concept with strong contrast and fast-read layout.</p>
-              </div>
-            </div>
-            <div class="demo-card-body">
-              <div class="demo-meta-row">
-                <span class="demo-tag">Visual design</span>
-              </div>
-              <h3>Static Pulse</h3>
-              <div class="demo-actions">
-                <a
-                  href="https://ebinjohnson-web.github.io/brand-gallery-demo/"
-                  class="btn concept-link" aria-label="Explore Static Pulse concept"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Explore concept <span aria-hidden="true">↗︎</span></a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
+    <section class="work-section" id="selected-work">
+      <div class="work-heading"><div><p class="eyebrow">02 / Out in the world</p><h2>Good people.<br><em>Real websites.</em></h2></div><p>A church finding its voice.<br>A photographer holding on to a feeling.<br>Here’s what that looks like online.</p></div>
+      <article class="feature-project"><a class="project-image" href="https://mmphotographi.ca/" target="_blank" rel="noopener noreferrer" aria-label="Visit MM Photographi"><img src="assets/images/mmphotographi-refresh.jpg" alt="MM Photographi website featuring a wedding portrait on a wooden bridge" width="1410" height="881" loading="lazy"><span class="project-open">Visit website ↗</span></a><div class="project-caption"><div><p class="eyebrow">Live website / Photography</p><h3>MM Photographi</h3></div><p>Photography and film,<br>front and centre.</p></div></article>
+      <article class="feature-project second-project"><a class="project-image" href="https://anchorchurchlondonca.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Anchor Church London"><img src="assets/images/anchor-church-preview.jpg" alt="Anchor Church London website with its Anchored in Jesus headline" width="1265" height="712" loading="lazy"><span class="project-open">Visit website ↗</span></a><div class="project-caption"><div><p class="eyebrow">Live website / Church</p><h3>Anchor Church London</h3></div><p>A welcoming home<br>for a London church.</p></div></article>
     </section>
-    <section class="section cta-band section-compact"><div class="container cta-band-inner"><h2>Have a website in mind?</h2><a href="contact.html" class="btn btn-primary">Let’s talk ↗︎</a></div></section>
+    <section class="concept-section" id="demo-portfolio">
+      <div class="concept-heading"><div><p class="eyebrow">03 / Room to imagine</p><h2>Different worlds.<br><em>New possibilities.</em></h2></div><div><p>Five design explorations.<br>See what your next website could feel like.</p><div class="gallery-controls"><button type="button" data-gallery-direction="-1" aria-label="Previous concepts">←</button><button type="button" data-gallery-direction="1" aria-label="Next concepts">→</button></div></div></div>
+      <div class="concept-gallery" tabindex="0" role="region" aria-label="Website concepts, scroll horizontally to explore">
+        <a class="concept-tile" href="https://ebinjohnson-web.github.io/common-ground-nonprofit-demo/" target="_blank" rel="noopener noreferrer"><div class="concept-picture"><img src="assets/images/concept-nonprofit.png" alt="Common Ground website concept" loading="lazy"><span>Explore concept ↗</span></div><p class="eyebrow">01 / Not for profit</p><h3>Common Ground</h3></a>
+        <a class="concept-tile" href="https://ebinjohnson-web.github.io/church-website-demo/" target="_blank" rel="noopener noreferrer"><div class="concept-picture"><img src="assets/images/concept-church-photo.jpg" alt="Grace Harbour Church website concept" loading="lazy"><span>Explore concept ↗</span></div><p class="eyebrow">02 / Church</p><h3>Grace Harbour Church</h3></a>
+        <a class="concept-tile" href="https://ebinjohnson-web.github.io/sandwich-shop-demo/" target="_blank" rel="noopener noreferrer"><div class="concept-picture"><img src="assets/images/concept-sandwich-photo.jpg" alt="Brick &amp; Board Sandwich Co. website concept" loading="lazy"><span>Explore concept ↗</span></div><p class="eyebrow">03 / Food &amp; hospitality</p><h3>Brick &amp; Board Sandwich Co.</h3></a>
+        <a class="concept-tile" href="https://ebinjohnson-web.github.io/ritik-hair-salon-demo/" target="_blank" rel="noopener noreferrer"><div class="concept-picture"><img src="assets/images/concept-salon-photo.jpg" alt="Ritik Hair Salon website concept" loading="lazy"><span>Explore concept ↗</span></div><p class="eyebrow">04 / Salon</p><h3>Ritik Hair Salon</h3></a>
+        <a class="concept-tile" href="https://ebinjohnson-web.github.io/brand-gallery-demo/" target="_blank" rel="noopener noreferrer"><div class="concept-picture"><img src="assets/images/concept-pulse-photo.jpg" alt="Static Pulse website concept" loading="lazy"><span>Explore concept ↗</span></div><p class="eyebrow">05 / Visual design</p><h3>Static Pulse</h3></a>
+      </div><p class="gallery-hint">Scroll, swipe, or use the arrows to explore →</p>
+    </section>
+    <section class="personal-section"><div class="process-film"><video id="process-film" muted loop playsinline preload="none" poster="assets/media/design-poster.jpg" aria-hidden="true"><source src="assets/media/design-film.mp4" type="video/mp4"></video><span>From the first idea to the final detail.</span></div><div class="personal-copy"><p class="eyebrow">04 / The person behind the pixels</p><h2>A little spark.<br><em>A lot of follow-through.</em></h2><p>I’m Ebin, an independent web designer in Sarnia. You work directly with me, from figuring out what you need to bringing it all together.</p><div class="service-list"><a href="services.html">Website design &amp; refreshes <span>↗</span></a><a href="services.html">Content &amp; communications <span>↗</span></a><a href="services.html">Practical digital support <span>↗</span></a></div><a class="text-link" href="about.html">A little more about me ↗</a></div></section>
+    <section class="closing-section"><img src="assets/media/business.webp" alt="" loading="lazy" aria-hidden="true"><div><p class="eyebrow">Your next chapter starts with a conversation</p><h2>Let’s make<br><em>something matter.</em></h2><a href="contact.html" class="cinema-button">Tell me what you have in mind <span>↗</span></a></div></section>
   </main>
   <footer class="site-footer">
   <div class="container footer-grid">
@@ -336,10 +199,11 @@
   </div>
   <div class="container footer-bottom">
     <p>© 2026 Ebin Johnson. All rights reserved.</p>
+    <details class="media-credits"><summary>Photography &amp; film credits</summary><p>Creative studio film: <a href="https://mixkit.co/free-stock-video/designer-in-his-studio-giving-color-to-his-strokes-in-29983/">Mixkit</a> · Design film: <a href="https://www.pexels.com/video/a-man-working-on-a-web-design-on-a-computet-3973313/">Pavel Danilyuk / Pexels</a> · Church: <a href="https://www.pexels.com/photo/light-through-windows-in-church-10626984/">Ron Lach / Pexels</a> · Community: <a href="https://www.pexels.com/photo/food-love-people-street-6646864/">RDNE Stock project / Pexels</a> · Coffee shop: <a href="https://www.pexels.com/photo/interior-of-a-coffee-shop-4079754/">Nam Phong Bùi / Pexels</a>. Stock imagery illustrates the kinds of organizations I work with.</p></details>
   </div>
 </footer>
   <script src="script.js?v=15"></script>
-  <script src="studio-motion.js?v=4"></script>
+  <script src="cinema-home.js?v=1"></script>
   <script src="launch-intro.js?v=4"></script>
 </body>
 </html>
