@@ -2,7 +2,6 @@
 (() => {
   const hero = document.getElementById('hero-film');
   const process = document.getElementById('process-film');
-  const gallery = document.querySelector('.concept-gallery');
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
   const mobile = matchMedia('(max-width:760px)');
   const capture = new URLSearchParams(location.search).get('capture') === '1';
@@ -24,7 +23,7 @@
   sync();
 })();
 
-/* Advance one project at a time, without interrupting someone browsing the gallery. */
+/* Drift right while the gallery is visible and nobody is interacting with it. */
 (() => {
   const gallery = document.querySelector('.concept-gallery');
   const section = gallery.closest('.concept-section');
@@ -32,11 +31,15 @@
   const toggle = section.querySelector('.gallery-autoplay');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const hover = matchMedia('(hover: hover)');
-  const delay = 4000;
+  const pixelsPerSecond = 40;
+  const interactionDelay = 1500;
   let visible = false;
   let paused = false;
   let dragging = false;
   let timer;
+  let frame;
+  let lastTime;
+  let remainder = 0;
 
   function move(direction) {
     const left = gallery.scrollLeft;
@@ -49,15 +52,37 @@
     gallery.scrollTo({ left: target, behavior: reduced.matches || Math.abs(target - left) > gallery.clientWidth * 1.5 ? 'instant' : 'smooth' });
   }
 
-  function schedule() {
+  function drift(time) {
+    if (lastTime !== undefined) {
+      remainder += Math.min(time - lastTime, 50) * pixelsPerSecond / 1000;
+      const pixels = Math.floor(remainder);
+      if (pixels > 0) {
+        const end = gallery.scrollWidth - gallery.clientWidth;
+        if (end > 0) {
+          gallery.scrollLeft = gallery.scrollLeft <= 0 ? end : Math.max(0, gallery.scrollLeft - pixels);
+        }
+        remainder -= pixels;
+      }
+    }
+    lastTime = time;
+    frame = requestAnimationFrame(drift);
+  }
+
+  function schedule(wait = 0) {
     clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    lastTime = undefined;
+    remainder = 0;
     if (!visible || paused || reduced.matches || dragging || document.hidden ||
         (hover.matches && gallery.matches(':hover')) || gallery.contains(document.activeElement)) return;
-    timer = setTimeout(() => { move(1); schedule(); }, delay);
+    timer = setTimeout(() => { frame = requestAnimationFrame(drift); }, wait);
   }
 
   section.querySelectorAll('[data-gallery-direction]').forEach(button => {
-    button.addEventListener('click', () => { move(Number(button.dataset.galleryDirection)); schedule(); });
+    button.addEventListener('click', () => {
+      schedule(interactionDelay);
+      move(Number(button.dataset.galleryDirection));
+    });
   });
   toggle.addEventListener('click', () => {
     paused = !paused;
@@ -76,12 +101,13 @@
   }
   gallery.addEventListener('pointerdown', () => { dragging = true; schedule(); });
   for (const type of ['pointerup', 'pointercancel']) {
-    window.addEventListener(type, () => { if (dragging) { dragging = false; schedule(); } });
+    window.addEventListener(type, () => { if (dragging) { dragging = false; schedule(interactionDelay); } });
   }
-  for (const type of ['pointerenter', 'pointerleave', 'scroll']) {
-    gallery.addEventListener(type, schedule, { passive: true });
+  for (const type of ['pointerenter', 'pointerleave']) {
+    gallery.addEventListener(type, () => schedule(), { passive: true });
   }
-  section.addEventListener('focusin', schedule);
+  gallery.addEventListener('wheel', () => schedule(interactionDelay), { passive: true });
+  section.addEventListener('focusin', () => schedule());
   section.addEventListener('focusout', () => setTimeout(schedule, 0));
-  document.addEventListener('visibilitychange', schedule);
+  document.addEventListener('visibilitychange', () => schedule());
 })();
