@@ -149,3 +149,19 @@ body.black-theme.home-page.studio-motion-page .cta-band-inner .btn-primary{backg
   .studio-motion-control{font-size:9px;padding:9px 12px;bottom:12px;right:12px}
 }
 @media(prefers-reduced-motion:reduce) and (min-width:761px){.studio-motion-page .reveal{transition:none;transform:none;opacity:1}.studio-motion-page *{scroll-behavior:auto!important}.studio-motion-page:not(.motion-opt-in) :is(.hero-signature,.studio-marquee-track,.hero-title-line){animation:none}.studio-motion-page:not(.motion-opt-in) .hero-showcase{transform:none!important}.studio-motion-page:not(.motion-opt-in) .showcase-slide img{transition:none;transform:none}}
+/* Keep the headline and project artwork in separate desktop columns. */
+@media(min-width:761px){
+  .motion-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:4%;align-items:center;height:auto;min-height:clamp(620px,calc(100svh - 150px),850px);max-height:none;padding:30px 0 160px}
+  .motion-hero-copy{width:100%;min-width:0;padding-top:0}
+  body.black-theme.home-page.studio-motion-page .studio-title{font-size:clamp(44px,5.1vw,86px);line-height:1.12}
+  .hero-title-line{background:none;padding:0 0 12px;border-radius:0}
+  .hero-title-line::after{display:none}
+  .hero-copy-bottom{background:none;padding:12px 0 0;border-radius:0}
+  .hero-showcase{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1.32;border-radius:22px}
+  .showcase-slide:nth-child(n){background:#202320}
+  .showcase-slide img{height:calc(100% - 64px);object-fit:contain;object-position:center;transform:none!important;filter:none}
+  .showcase-slide::after{display:none}
+  .showcase-slide-label{left:20px;right:20px;bottom:0;min-height:64px;gap:12px}
+  .hero-signature{left:0;right:auto;bottom:-105px}
+  .showcase-controls{bottom:-59px}
+}

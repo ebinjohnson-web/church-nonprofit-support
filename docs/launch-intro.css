@@ -9,19 +9,15 @@ body.black-theme .launch-line{margin:0;padding:0 2vw;font-family:'Bebas Neue','A
 body.black-theme .launch-line-better{-webkit-text-stroke-color:#e8c28c}
 .launch-logo{position:relative;display:grid;place-items:center;flex:none;width:100%;padding:0 24px;z-index:1;opacity:0}
 .launch-logo img{width:clamp(230px,35vw,520px);max-width:85vw;height:auto;display:block}
-body.black-theme .launch-skip{position:absolute;right:5vw;bottom:max(26px,env(safe-area-inset-bottom));z-index:5;min-height:48px;padding:10px 4px;background:transparent;border:0;border-bottom:1px solid #e8c28c66;color:#e8c28c;font:500 15px Manrope,Arial,sans-serif;cursor:pointer}
-.launch-skip:focus-visible{outline:2px solid #e8c28c;outline-offset:6px}
 html.launch-running .launch-line-good{animation:launch-good 4.8s linear both}
 html.launch-running .launch-line-better{animation:launch-better 4.8s linear both}
 html.launch-running .launch-logo{animation:launch-logo-rise 4.95s linear both}
 html.launch-running .launch-intro{animation:launch-curtain-out .8s cubic-bezier(.76,0,.24,1) 4.15s both}
-html.launch-running .launch-skip{animation:launch-skip-out .2s linear 4.1s both}
 /* Both lines keep moving: a slower centre pass connects opposite entry/exit directions. */
 @keyframes launch-good{0%{transform:translateX(110vw)}30%{transform:translateX(8vw)}70%{transform:translateX(-8vw)}100%{transform:translateX(-110vw)}}
 @keyframes launch-better{0%{transform:translateX(-110vw)}30%{transform:translateX(-8vw)}70%{transform:translateX(8vw)}100%{transform:translateX(110vw)}}
 @keyframes launch-logo-rise{0%,15%{opacity:0;transform:translateY(50vh)}45%{opacity:1;transform:translateY(12px)}100%{opacity:1;transform:translateY(-12px)}}
 @keyframes launch-curtain-out{to{transform:translateY(-101%)}}
-@keyframes launch-skip-out{to{opacity:0;visibility:hidden}}
 @media(max-width:760px){
   .launch-art{justify-content:center;gap:clamp(24px,4svh,40px);padding:max(24px,env(safe-area-inset-top)) 0 max(24px,env(safe-area-inset-bottom))}
   .launch-words{gap:clamp(12px,2svh,20px)}
@@ -29,7 +25,6 @@ html.launch-running .launch-skip{animation:launch-skip-out .2s linear 4.1s both}
   .launch-word{display:block}
   .launch-logo{padding-inline:6vw}
   .launch-logo img{width:82vw;max-width:360px}
-  body.black-theme .launch-skip{display:none}
   html.launch-running .launch-line-good{animation:launch-mobile-good 4.2s linear both}
   html.launch-running .launch-line-better{animation:launch-mobile-better 4.2s linear both}
   html.launch-running .launch-logo{animation:launch-mobile-logo 4.2s linear both}
