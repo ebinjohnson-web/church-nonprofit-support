@@ -17,7 +17,7 @@
       else film.play().catch(() => { /* The poster stays visible if autoplay is unavailable. */ });
     }
     const paused = hero.paused;
-    toggle.innerHTML = paused ? 'Play film <span aria-hidden="true">▶</span>' : 'Pause film <span aria-hidden="true">Ⅱ</span>';
+    toggle.innerHTML = paused ? 'Play film <span aria-hidden="true">▶︎</span>' : 'Pause film <span aria-hidden="true">Ⅱ</span>';
     toggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
     toggle.setAttribute('aria-pressed',String(paused));
   }
