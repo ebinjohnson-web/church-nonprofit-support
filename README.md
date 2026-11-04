@@ -103,6 +103,8 @@ The Common Ground not-for-profit concept appears first in Website concepts. Its 
 
 ## Cinematic homepage media
 
-The homepage includes locally optimized, silent MP4 clips from Mixkit and Pexels with JPEG posters. New sector photography uses optimized WebP files. The media total is about 2.8 MB; secondary video loads on approach and photos are lazy-loaded. Credits and source/license details are in `docs/assets/media/CREDITS.md` and a linked disclosure in the footer. Portfolio previews and all five concept destinations are preserved. The legacy `studio-motion` files are retained for history but no longer loaded by the homepage.
+The homepage includes locally optimized, silent MP4 clips from Mixkit and Pexels with JPEG posters. New sector photography uses optimized WebP files. Secondary video loads on approach and photos are lazy-loaded. Credits and source/license details are in `docs/assets/media/CREDITS.md` and a linked disclosure in the footer. Portfolio previews and all five concept destinations are preserved. The legacy `studio-motion` files are retained for history but no longer loaded by the homepage.
 
 The inner pages use `cinema-inner.css` over the shared structural styles: full-width photographic heroes, cream reading/form sections, charcoal and forest backgrounds, and the same photography credits as the homepage. The contact form integration is preserved.
+
+Content photography is unique across the four main pages. `tools/check-media.mjs` checks both paths and file contents through hashes to reject repeated content media during `npm run check`. Shared brand logos are outside that content check. Video posters belong only to their original video element.

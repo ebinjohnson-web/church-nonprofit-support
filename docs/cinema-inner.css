@@ -77,3 +77,9 @@ body.black-theme.cinema-inner .site-footer{background:#101411;border-color:#ffff
 
 .keep-word{white-space:nowrap}
 body.black-theme.studio-inner-page.cinema-inner .paper-section .inner-note a{color:#685737;text-decoration:underline}
+/* Unique photographs keep each page's visual story distinct. */
+.cinema-inner.inner-about .photo-hero .inner-hero-photo{object-position:center 45%}
+.cinema-inner.inner-services .photo-hero .inner-hero-photo{object-position:center 45%}
+.cinema-inner .inner-projects article{border-top:1px solid #ffffff30;padding-top:28px}
+.cinema-inner .inner-projects article:nth-child(2){padding-top:28px}
+@media(max-width:760px){.cinema-inner.inner-about .photo-hero .inner-hero-photo{object-position:55% center}.cinema-inner.inner-services .photo-hero .inner-hero-photo{object-position:60% center}}
