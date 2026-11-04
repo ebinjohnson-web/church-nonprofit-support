@@ -23,7 +23,7 @@
   sync();
 })();
 
-/* Drift right while the gallery is visible and nobody is interacting with it. */
+/* Drift left while the gallery is visible and nobody is interacting with it. */
 (() => {
   const gallery = document.querySelector('.concept-gallery');
   const section = gallery.closest('.concept-section');
@@ -59,7 +59,7 @@
       if (pixels > 0) {
         const end = gallery.scrollWidth - gallery.clientWidth;
         if (end > 0) {
-          gallery.scrollLeft = gallery.scrollLeft <= 0 ? end : Math.max(0, gallery.scrollLeft - pixels);
+          gallery.scrollLeft = gallery.scrollLeft >= end - 1 ? 0 : Math.min(end, gallery.scrollLeft + pixels);
         }
         remainder -= pixels;
       }
