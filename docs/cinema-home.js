@@ -20,6 +20,68 @@
   } else visible.set(process,true);
   document.addEventListener('visibilitychange',sync);
   reduced.addEventListener('change',sync); mobile.addEventListener('change',sync);
-  document.querySelectorAll('[data-gallery-direction]').forEach(button=>button.addEventListener('click',()=>gallery.scrollBy({left:Number(button.dataset.galleryDirection)*(gallery.querySelector('.concept-tile').getBoundingClientRect().width+28),behavior:reduced.matches?'instant':'smooth'})));
+
   sync();
+})();
+
+/* Advance one project at a time, without interrupting someone browsing the gallery. */
+(() => {
+  const gallery = document.querySelector('.concept-gallery');
+  const section = gallery.closest('.concept-section');
+  const cards = [...gallery.querySelectorAll('.concept-tile')];
+  const toggle = section.querySelector('.gallery-autoplay');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const hover = matchMedia('(hover: hover)');
+  const delay = 4000;
+  let visible = false;
+  let paused = false;
+  let dragging = false;
+  let timer;
+
+  function move(direction) {
+    const left = gallery.scrollLeft;
+    const limit = gallery.scrollWidth - gallery.clientWidth;
+    const start = cards[0].getBoundingClientRect().left;
+    const stops = cards.map(card => Math.min(limit, card.getBoundingClientRect().left - start));
+    const target = direction > 0
+      ? (stops.find(stop => stop > left + 2) ?? 0)
+      : ([...stops].reverse().find(stop => stop < left - 2) ?? limit);
+    gallery.scrollTo({ left: target, behavior: reduced.matches || Math.abs(target - left) > gallery.clientWidth * 1.5 ? 'instant' : 'smooth' });
+  }
+
+  function schedule() {
+    clearTimeout(timer);
+    if (!visible || paused || reduced.matches || dragging || document.hidden ||
+        (hover.matches && gallery.matches(':hover')) || gallery.contains(document.activeElement)) return;
+    timer = setTimeout(() => { move(1); schedule(); }, delay);
+  }
+
+  section.querySelectorAll('[data-gallery-direction]').forEach(button => {
+    button.addEventListener('click', () => { move(Number(button.dataset.galleryDirection)); schedule(); });
+  });
+  toggle.addEventListener('click', () => {
+    paused = !paused;
+    toggle.textContent = paused ? 'Resume gallery' : 'Pause gallery';
+    schedule();
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      schedule();
+    }, { threshold: .15 }).observe(gallery);
+    const syncPreference = () => { toggle.hidden = reduced.matches; schedule(); };
+    reduced.addEventListener('change', syncPreference);
+    syncPreference();
+  }
+  gallery.addEventListener('pointerdown', () => { dragging = true; schedule(); });
+  for (const type of ['pointerup', 'pointercancel']) {
+    window.addEventListener(type, () => { if (dragging) { dragging = false; schedule(); } });
+  }
+  for (const type of ['pointerenter', 'pointerleave', 'scroll']) {
+    gallery.addEventListener(type, schedule, { passive: true });
+  }
+  section.addEventListener('focusin', schedule);
+  section.addEventListener('focusout', () => setTimeout(schedule, 0));
+  document.addEventListener('visibilitychange', schedule);
 })();
