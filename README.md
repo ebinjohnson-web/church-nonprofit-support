@@ -33,8 +33,8 @@ GitHub Pages still serves the `docs/` folder directly.
 
 - `docs/refresh.css` adds the shared cobalt, coral, lime, and cream theme.
 - The current homepage uses `cinema-home.css` and `cinema-home.js`: a full-width film hero, photographic sector panels, large live-project previews, and a horizontal concept gallery.
-- The hero has a local film play/pause control; videos pause when offscreen or the tab is hidden. There is no floating global motion control.
-- On desktop, the homepage respects system reduced-motion preferences. At mobile widths (760px and below), films play regardless of the system preference, as requested. The film control works at every width. Other pages retain their earlier motion treatment. Content remains readable without JavaScript.
+- The hero has no visible film controls; videos pause when offscreen or the tab is hidden. There is no floating global motion control.
+- On desktop, the homepage respects system reduced-motion preferences. At mobile widths (760px and below), films play regardless of the system preference, as requested.  Other pages retain their earlier motion treatment. Content remains readable without JavaScript.
 
 ## Pages
 
@@ -104,3 +104,5 @@ The Common Ground not-for-profit concept appears first in Website concepts. Its 
 ## Cinematic homepage media
 
 The homepage includes locally optimized, silent MP4 clips from Mixkit and Pexels with JPEG posters. New sector photography uses optimized WebP files. The media total is about 2.8 MB; secondary video loads on approach and photos are lazy-loaded. Credits and source/license details are in `docs/assets/media/CREDITS.md` and a linked disclosure in the footer. Portfolio previews and all five concept destinations are preserved. The legacy `studio-motion` files are retained for history but no longer loaded by the homepage.
+
+The inner pages use `cinema-inner.css` over the shared structural styles: full-width photographic heroes, cream reading/form sections, charcoal and forest backgrounds, and the same photography credits as the homepage. The contact form integration is preserved.

@@ -82,3 +82,5 @@ body.black-theme.cinema-home .site-footer{background:#101411;border-top:1px soli
 /* Capture mode uses the header in document flow. */
 body.black-theme.cinema-home.capture-mode main{padding-top:0}
 @media(min-width:761px){.film-hero{min-height:620px}}
+
+.film-topline{justify-content:flex-end}.film-tools{justify-content:flex-end}

@@ -1,0 +1,79 @@
+/* The inner pages share the homepage's photographic, charcoal and cream treatment. */
+body.black-theme.cinema-inner{--inner-bg:#141715;--inner-gold:#e8c28c;--paper:#f0ede5;--paper-ink:#141715;background:var(--inner-bg)}
+body.black-theme.cinema-inner .site-header{background:#101411f5;border-color:#ffffff20;backdrop-filter:blur(12px)}
+.cinema-inner .nav-wrap{min-height:92px}.cinema-inner .site-logo-image{height:42px}.cinema-inner .site-nav{gap:30px}
+body.black-theme.cinema-inner .header-cta{padding:13px 23px;border-radius:50px;color:#141715}
+.cinema-inner main{padding-top:92px}.cinema-inner.capture-mode main{padding-top:0}
+.cinema-inner .photo-hero{position:relative;isolation:isolate;min-height:660px;display:flex;align-items:end;padding:100px 0 75px;background:#28392c;overflow:hidden}
+.inner-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:none}
+.photo-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#08110de0,#08110d55),linear-gradient(0deg,#08110dbb,transparent);z-index:-1}
+body.black-theme.cinema-inner .photo-hero h1{font-size:clamp(60px,6.8vw,112px);line-height:1.04;letter-spacing:-.065em;max-width:1250px;margin-bottom:32px;color:#f7f4eb}
+body.black-theme.cinema-inner .photo-hero .inner-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#f0ede5;line-height:1.7;font-weight:500;margin-bottom:27px}
+.photo-hero .inner-kicker::before{display:none}
+body.black-theme.cinema-inner .photo-hero .inner-lead{color:#e4e5dc;font-size:17px;line-height:1.8;max-width:610px}
+.photo-hero .inner-link{border-bottom:1px solid #e8c28c80;padding-bottom:5px}
+body.black-theme.cinema-inner .inner-kicker{font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.7}
+.cinema-inner .inner-section{padding:105px 0;border-color:#ffffff15}
+.cinema-inner .inner-section h2{font-size:clamp(40px,4.6vw,72px);line-height:1.08;letter-spacing:-.065em}
+.cinema-inner .inner-soft{background:#222b24}
+body.black-theme.studio-inner-page.cinema-inner .paper-section{background:var(--paper);color:var(--paper-ink);--reading-muted:#454b42}
+body.black-theme.studio-inner-page.cinema-inner .paper-section :is(h2,h3,p,li,label,summary,.inner-kicker,.inner-number,.inner-link){color:var(--paper-ink)}
+body.black-theme.studio-inner-page.cinema-inner .paper-section :is(em,.inner-number){color:#786644}
+body.black-theme.studio-inner-page.cinema-inner .paper-section :is(.inner-prose p,.service-description p,.service-description li,.contact-intro){color:#454b42}
+body.black-theme.studio-inner-page.cinema-inner .paper-section .inner-link{color:#685737}
+.cinema-inner .paper-section :is(.service-row,.service-description li,.inner-faq details){border-color:#14171530}
+.cinema-inner .paper-section :is(.service-description li::before,.inner-faq summary::after){color:#786644}
+.cinema-inner .service-row{padding:55px 0}.cinema-inner .service-row:last-child{padding-bottom:0}
+.cinema-inner .inner-project-image{border-radius:0;aspect-ratio:auto;padding:18px;background:#343c30}
+.cinema-inner .inner-project-image img{height:auto;object-fit:contain}
+.cinema-inner .inner-projects article:nth-child(2) .inner-project-image{background:#5c6052}
+.cinema-inner .inner-cta{padding-top:60px}
+.cinema-inner .inner-cta-panel{border-radius:0;background:var(--paper);padding:70px 5%;color:var(--paper-ink)}
+body.black-theme.cinema-inner .inner-cta-panel h2{color:var(--paper-ink)}
+.photo-interlude{position:relative;isolation:isolate;min-height:540px;display:flex;align-items:end;padding:70px 0;overflow:hidden}
+.photo-interlude>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
+.photo-interlude::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#08110de0,#08110d20),linear-gradient(0deg,#08110d99,transparent);z-index:-1}
+body.black-theme.cinema-inner .photo-interlude h2{font-size:clamp(42px,5vw,80px);font-weight:500;letter-spacing:-.065em;line-height:1.08;margin:0 0 24px}
+body.black-theme.cinema-inner .photo-interlude p{color:#eeeae1;font-size:17px;line-height:1.8;margin-bottom:0}
+body.black-theme.cinema-inner .photo-interlude .inner-kicker{margin-bottom:25px;font-size:12px}
+.sector-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#222b24}
+.sector-strip figure{position:relative;height:420px;overflow:hidden;margin:0}
+.sector-strip img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:transform 1s}
+.sector-strip figure::after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#08110dbb)}
+.sector-strip figcaption{position:absolute;bottom:30px;left:30px;right:20px;z-index:1;font-size:clamp(28px,3.5vw,52px);letter-spacing:-.05em;color:#f0ede5}
+.inner-contact .photo-hero{min-height:690px}
+.inner-contact .photo-hero .inner-hero-photo{object-position:center 45%}
+body.black-theme.cinema-inner .photo-hero .direct-email>a{font-size:clamp(22px,2.5vw,37px);color:#e8c28c}
+body.black-theme.cinema-inner .photo-hero #copy-email{color:#eeeae1;border-color:#eeeae170}
+.cinema-inner .contact-hero-bottom{margin-top:50px}
+.cinema-inner .contact-guide{border-radius:0;box-shadow:0 18px 50px #14171512}
+.cinema-inner .contact-guide h3{letter-spacing:-.06em;line-height:1.1}
+body.black-theme.studio-inner-page.cinema-inner .paper-section .inquiry-form label span{color:#5c6157}
+body.black-theme.studio-inner-page.cinema-inner .inquiry-form :is(input,select,textarea){background:#faf9f4;color:#141715;border-color:#14171540;border-radius:2px;font-size:16px}
+body.black-theme.studio-inner-page.cinema-inner .inquiry-form :is(input,textarea)::placeholder{color:#676d62}
+.cinema-inner .inquiry-form select{color-scheme:light}
+body.black-theme.studio-inner-page.cinema-inner .inquiry-form .inner-button.gold{background:#141715;color:#f0ede5}
+body.black-theme.studio-inner-page.cinema-inner .paper-section .inquiry-status[data-state="success"]{color:#c4e5bd}
+body.black-theme.studio-inner-page.cinema-inner .paper-section .inquiry-status[data-state="error"]{color:#f5c2ac}
+.cinema-inner .paper-section .inquiry-form>.inner-note{font-size:13px;color:#454b42}
+body.black-theme.cinema-inner .site-footer{background:#101411;border-color:#ffffff20}
+.cinema-inner .footer-bottom{display:block}.cinema-inner .media-credits{margin:15px 0;font-size:12px;max-width:950px;color:#c2beb4}.media-credits summary{cursor:pointer}.cinema-inner .media-credits p{padding-top:15px;font-size:12px!important;line-height:1.8}.cinema-inner .media-credits a{text-decoration:underline;font-size:12px!important}
+@media(max-width:1100px) and (min-width:761px){.cinema-inner .site-nav{gap:18px}.sector-strip figure{height:360px}}
+@media(max-width:760px){
+ .cinema-inner .nav-wrap{min-height:78px}.cinema-inner .site-logo-image{height:35px}.cinema-inner main{padding-top:78px}
+ .cinema-inner .photo-hero{min-height:590px;padding:75px 0 50px}.cinema-inner .photo-hero .inner-hero-photo{object-position:60% center}
+ body.black-theme.cinema-inner .photo-hero h1{font-size:clamp(39px,10.5vw,65px);line-height:1.1;overflow-wrap:normal;margin-bottom:25px}
+ body.black-theme.cinema-inner .photo-hero .inner-kicker{font-size:10px;max-width:300px;letter-spacing:.1em}
+ body.black-theme.cinema-inner .photo-hero .inner-lead{font-size:16px;line-height:1.8}.photo-hero .inner-lead br{display:none}
+ .cinema-inner .inner-section{padding:65px 0}.cinema-inner .inner-section h2{font-size:clamp(34px,9vw,48px);line-height:1.12}
+ .cinema-inner .inner-cta{padding-top:30px}.cinema-inner .inner-cta-panel{padding:38px 27px}.cinema-inner .inner-project-image{padding:12px}
+ .photo-interlude{min-height:490px;padding:60px 0}.photo-interlude>img{object-position:55% center}
+ body.black-theme.cinema-inner .photo-interlude h2{font-size:clamp(36px,9.5vw,52px)}body.black-theme.cinema-inner .photo-interlude p{font-size:16px}.photo-interlude p br{display:none}
+ .sector-strip{grid-template-columns:1fr}.sector-strip figure{height:310px}.sector-strip figcaption{font-size:36px;bottom:25px;left:6%}
+ .cinema-inner .service-row{padding:35px 0}.cinema-inner .inner-contact .photo-hero{min-height:680px}.cinema-inner .contact-hero-bottom{gap:30px;margin-top:30px}
+ body.black-theme.cinema-inner .photo-hero .direct-email>a{font-size:clamp(21px,6vw,30px)}
+ .cinema-inner .contact-guide{padding:30px 27px;position:static}.cinema-inner .contact-guide h3{font-size:38px}
+}
+
+.keep-word{white-space:nowrap}
+body.black-theme.studio-inner-page.cinema-inner .paper-section .inner-note a{color:#685737;text-decoration:underline}
