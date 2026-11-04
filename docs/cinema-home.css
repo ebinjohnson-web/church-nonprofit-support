@@ -97,3 +97,7 @@ body.black-theme.cinema-home.capture-mode main{padding-top:0}
   .round-link{width:104px;height:104px;font-size:14px;flex-shrink:0}
   .film-tools{font-size:12px;margin-top:8px}
 }
+
+/* The Anchor Church screenshot includes a 15px browser scrollbar at its right edge. */
+.anchor-preview-crop{overflow:hidden}
+.anchor-preview-crop img{width:101.2%;max-width:none}
